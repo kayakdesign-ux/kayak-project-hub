@@ -18,20 +18,20 @@ import {
 
 export const RiverFlowTipsSection: React.FC = () => {
   return (
-    <section id="river-flow-tips" className="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <section id="river-flow-tips" className="py-20 bg-slate-900 text-primary-foreground relative overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute inset-0 bg-radial-[ellipse_80%_80%_at_50%_-20%] from-teal-900/30 via-slate-900 to-slate-950 pointer-events-none" />
-      <div className="absolute -top-40 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-40 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-500/40 text-teal-300 text-xs font-semibold tracking-wide uppercase mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/40 text-teal-300 text-xs font-semibold tracking-wide uppercase mb-4">
             <Compass className="w-3.5 h-3.5 text-teal-400" />
             <span>Section 02 · 水流判別 ＆ リバーリーディング</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary-foreground tracking-tight mb-4 leading-tight">
             川の読み方 ＆ リバーフローTips
           </h2>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
@@ -67,11 +67,11 @@ export const RiverFlowTipsSection: React.FC = () => {
         </div>
 
         {/* Bottom Epilogue Banner */}
-        <div className="mt-16 bg-gradient-to-r from-teal-950/80 via-slate-800 to-teal-950/80 border border-teal-500/40 rounded-2xl p-6 sm:p-8 text-center shadow-xl">
-          <div className="inline-flex p-3 bg-teal-500/20 text-teal-400 rounded-xl mb-3">
+        <div className="mt-16 bg-gradient-to-r from-teal-950/80 via-slate-800 to-teal-950/80 border border-primary/40 rounded-2xl p-6 sm:p-8 text-center shadow-xl">
+          <div className="inline-flex p-3 bg-primary/20 text-teal-400 rounded-xl mb-3">
             <Waves className="w-7 h-7" />
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+          <h3 className="text-xl sm:text-2xl font-bold text-primary-foreground mb-2">
             「川は嘘をつかない。物理法則を読み解くパドラーであれ」
           </h3>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
@@ -80,7 +80,7 @@ export const RiverFlowTipsSection: React.FC = () => {
           <div className="mt-6">
             <a
               href="#safety-training"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:shadow-teal-500/25 transition-all text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary text-primary-foreground font-semibold rounded-lg shadow-md hover:shadow-teal-500/25 transition-all text-sm"
             >
               次へ：安全講習 ＆ レスキューマニュアル（Section 03）を見る
               <ArrowDownCircle className="w-4 h-4" />
@@ -145,7 +145,7 @@ const RiverFlowCard: React.FC<RiverFlowCardProps> = ({ tip }) => {
           <span className={`px-2.5 py-0.5 text-xs font-semibold rounded-md border ${tip.categoryColor}`}>
             {tip.category}
           </span>
-          <span className="text-xs text-slate-400 font-mono hidden sm:inline">
+          <span className="text-xs text-muted-foreground/70 font-mono hidden sm:inline">
             {tip.enTitle}
           </span>
         </div>
@@ -154,12 +154,12 @@ const RiverFlowCard: React.FC<RiverFlowCardProps> = ({ tip }) => {
 
       {/* Main Body */}
       <div className="p-6 sm:p-8">
-        <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
+        <h3 className="text-xl sm:text-2xl font-bold text-primary-foreground mb-3">
           {tip.title}
         </h3>
 
         {/* Core Rule Callout */}
-        <div className="p-4 rounded-xl bg-slate-900/80 border-l-4 border-teal-500 mb-6">
+        <div className="p-4 rounded-xl bg-slate-900/80 border-l-4 border-primary mb-6">
           <div className="flex items-start gap-2.5">
             <Eye className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
             <div>
@@ -187,7 +187,7 @@ const RiverFlowCard: React.FC<RiverFlowCardProps> = ({ tip }) => {
 
         {/* Action Points Grid */}
         <div className="bg-slate-900/60 rounded-xl p-4 sm:p-5 border border-slate-800/80 mb-5">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground/70 mb-3 flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-teal-400" />
             現場で実践すべきアクション
           </h4>
@@ -202,7 +202,7 @@ const RiverFlowCard: React.FC<RiverFlowCardProps> = ({ tip }) => {
         </div>
 
         {/* Field Check Quote */}
-        <div className="px-4 py-3 rounded-lg bg-teal-950/40 border border-teal-500/30 flex items-center gap-3">
+        <div className="px-4 py-3 rounded-lg bg-teal-950/40 border border-primary/30 flex items-center gap-3">
           <HelpCircle className="w-5 h-5 text-teal-300 shrink-0" />
           <div className="text-xs sm:text-sm text-teal-200">
             <span className="font-bold text-teal-100">現場合言葉：</span> {tip.fieldCheck}

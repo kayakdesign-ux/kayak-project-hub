@@ -89,16 +89,16 @@ export const PaddlerTipsSection: React.FC = () => {
     switch (type) {
       case 'river-bank':
         return (
-          <div className="bg-slate-900 text-white rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden border border-slate-700 min-h-[140px]">
+          <div className="bg-slate-900 text-primary-foreground rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden border border-slate-700 min-h-[140px]">
             <div className="absolute inset-0 bg-gradient-to-b from-teal-950/40 to-slate-950/80 pointer-events-none" />
             <div className="relative z-10 w-full max-w-xs space-y-2">
               <div className="flex items-center justify-between text-xs font-mono border-b border-slate-700 pb-1.5 text-slate-300">
                 <span className="font-bold text-teal-400">【左岸】Left Bank</span>
-                <span className="text-[10px] text-slate-400">川の流れ ↓</span>
+                <span className="text-[10px] text-muted-foreground/70">川の流れ ↓</span>
                 <span className="font-bold text-amber-400">【右岸】Right Bank</span>
               </div>
               <div className="flex items-center justify-center gap-3 py-1">
-                <div className="w-8 h-8 rounded-full bg-teal-500/20 border border-teal-400 flex items-center justify-center text-teal-300 font-bold text-xs">
+                <div className="w-8 h-8 rounded-full bg-primary/20 border border-teal-400 flex items-center justify-center text-teal-300 font-bold text-xs">
                   左
                 </div>
                 <div className="flex flex-col items-center text-teal-300">
@@ -118,7 +118,7 @@ export const PaddlerTipsSection: React.FC = () => {
 
       case 'pfd-buoyancy':
         return (
-          <div className="bg-slate-900 text-white rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden border border-slate-700 min-h-[140px]">
+          <div className="bg-slate-900 text-primary-foreground rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden border border-slate-700 min-h-[140px]">
             <div className="w-full grid grid-cols-2 gap-2 text-xs">
               <div className="bg-slate-800/80 p-2.5 rounded-lg border border-slate-700 space-y-1">
                 <span className="text-sky-300 font-bold block text-[11px]">🌊 海水（塩分あり）</span>
@@ -138,7 +138,7 @@ export const PaddlerTipsSection: React.FC = () => {
 
       case 'no-standing':
         return (
-          <div className="bg-rose-950/80 text-white rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden border border-rose-600/60 min-h-[140px]">
+          <div className="bg-rose-950/80 text-primary-foreground rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden border border-rose-600/60 min-h-[140px]">
             <div className="flex items-center gap-2 mb-2 text-rose-300 text-xs font-bold">
               <AlertTriangle className="w-4 h-4 text-rose-400" />
               <span>フットエントラップメントの物理トラップ</span>
@@ -149,7 +149,7 @@ export const PaddlerTipsSection: React.FC = () => {
                 <span>→</span>
                 <span>水圧で倒される</span>
                 <span>→</span>
-                <span className="text-white font-bold">自力脱出不可</span>
+                <span className="text-primary-foreground font-bold">自力脱出不可</span>
               </div>
               <p className="text-[11px] text-slate-300 leading-snug pt-1">
                 水深数十cmでも激流の水圧は数百kg。立とうとせず必ず「足先を浮かせた仰向け」をキープ！
@@ -160,7 +160,7 @@ export const PaddlerTipsSection: React.FC = () => {
 
       case 'whistle':
         return (
-          <div className="bg-slate-900 text-white rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden border border-slate-700 min-h-[140px]">
+          <div className="bg-slate-900 text-primary-foreground rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden border border-slate-700 min-h-[140px]">
             <div className="flex items-center gap-2 text-xs font-bold text-amber-400 mb-2">
               <Volume2 className="w-4 h-4 text-amber-400" />
               <span>川の音響コード（FOX40 玉なしホイッスル）</span>
@@ -180,28 +180,28 @@ export const PaddlerTipsSection: React.FC = () => {
 
       case 'first-step':
         return (
-          <div className="bg-teal-950 text-white rounded-xl p-4 flex flex-col justify-center border border-teal-700/60 min-h-[140px]">
+          <div className="bg-teal-950 text-primary-foreground rounded-xl p-4 flex flex-col justify-center border border-teal-700/60 min-h-[140px]">
             <span className="text-[11px] font-mono font-bold text-teal-300 mb-2 block text-center">
               セルフレスキュー最初の5ステップ
             </span>
             <div className="flex items-center justify-between text-[10px] font-mono text-center gap-1">
-              <div className="bg-teal-900/80 p-1.5 rounded flex-1 border border-teal-600">
+              <div className="bg-teal-900/80 p-1.5 rounded flex-1 border border-primary">
                 <span className="block font-bold text-teal-300">①転覆</span>
               </div>
               <span className="text-teal-500">→</span>
-              <div className="bg-teal-900/80 p-1.5 rounded flex-1 border border-teal-600">
+              <div className="bg-teal-900/80 p-1.5 rounded flex-1 border border-primary">
                 <span className="block font-bold text-teal-300">②スカート脱</span>
               </div>
               <span className="text-teal-500">→</span>
-              <div className="bg-teal-900/80 p-1.5 rounded flex-1 border border-teal-600">
+              <div className="bg-teal-900/80 p-1.5 rounded flex-1 border border-primary">
                 <span className="block font-bold text-teal-300">③艇起こす</span>
               </div>
               <span className="text-teal-500">→</span>
-              <div className="bg-teal-900/80 p-1.5 rounded flex-1 border border-teal-600">
+              <div className="bg-teal-900/80 p-1.5 rounded flex-1 border border-primary">
                 <span className="block font-bold text-teal-300">④パドル差込</span>
               </div>
               <span className="text-teal-500">→</span>
-              <div className="bg-teal-900/80 p-1.5 rounded flex-1 border border-teal-600">
+              <div className="bg-teal-900/80 p-1.5 rounded flex-1 border border-primary">
                 <span className="block font-bold text-teal-300">⑤泳ぐ</span>
               </div>
             </div>
@@ -210,7 +210,7 @@ export const PaddlerTipsSection: React.FC = () => {
 
       case 'never-tether':
         return (
-          <div className="bg-rose-950 text-white rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden border border-rose-600 min-h-[140px]">
+          <div className="bg-rose-950 text-primary-foreground rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden border border-rose-600 min-h-[140px]">
             <div className="flex items-center gap-2 mb-1.5 text-rose-300 text-xs font-bold">
               <ShieldAlert className="w-5 h-5 text-rose-500" />
               <span>自縄自縛の即死リスク</span>
@@ -224,7 +224,7 @@ export const PaddlerTipsSection: React.FC = () => {
 
       case 'parallel-forward':
         return (
-          <div className="bg-slate-900 text-white rounded-xl p-4 flex flex-col justify-center border border-indigo-600/70 min-h-[140px]">
+          <div className="bg-slate-900 text-primary-foreground rounded-xl p-4 flex flex-col justify-center border border-indigo-600/70 min-h-[140px]">
             <div className="flex items-center justify-between mb-2 pb-1 border-b border-slate-700">
               <span className="text-xs font-bold text-indigo-300 flex items-center gap-1.5">
                 <span>🚲 斜面の物理法則：自転車の坂道ウイリー vs 前傾平行</span>
@@ -255,7 +255,7 @@ export const PaddlerTipsSection: React.FC = () => {
 
       case 'falling-sport':
         return (
-          <div className="bg-slate-900 text-white rounded-xl p-4 flex flex-col justify-center border border-emerald-600/70 min-h-[140px]">
+          <div className="bg-slate-900 text-primary-foreground rounded-xl p-4 flex flex-col justify-center border border-emerald-600/70 min-h-[140px]">
             <div className="flex items-center justify-between mb-2 pb-1 border-b border-slate-700">
               <span className="text-xs font-bold text-emerald-300 flex items-center gap-1.5">
                 <span>⛷️ 落下スポーツの真理：スキーやダウンヒルと同じ！</span>
@@ -286,12 +286,12 @@ export const PaddlerTipsSection: React.FC = () => {
 
       case 'roll-is-recovery':
         return (
-          <div className="bg-slate-900 text-white rounded-xl p-4 flex flex-col justify-center border border-teal-500/70 min-h-[140px]">
+          <div className="bg-slate-900 text-primary-foreground rounded-xl p-4 flex flex-col justify-center border border-primary/70 min-h-[140px]">
             <div className="flex items-center justify-between mb-2 pb-1 border-b border-slate-700">
               <span className="text-xs font-bold text-teal-300 flex items-center gap-1.5">
                 <span>🛡️ パドラーの美学：ロールはリカバリー ＆ ポーテージの誇り</span>
               </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-teal-950 text-teal-200 border border-teal-500/40">
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-teal-950 text-teal-200 border border-primary/40">
                 COOL PADDLER
               </span>
             </div>
@@ -321,7 +321,7 @@ export const PaddlerTipsSection: React.FC = () => {
 
       case 'shared-river':
         return (
-          <div className="bg-slate-900 text-white rounded-xl p-4 flex flex-col justify-center border border-emerald-500/70 min-h-[140px]">
+          <div className="bg-slate-900 text-primary-foreground rounded-xl p-4 flex flex-col justify-center border border-emerald-500/70 min-h-[140px]">
             <div className="flex items-center justify-between mb-2 pb-1 border-b border-slate-700">
               <span className="text-xs font-bold text-emerald-300 flex items-center gap-1.5">
                 <span>🏞️ 川の共有財産とマナー：ダム200m管理区域 ＆ 釣り人・地域への配慮</span>
@@ -356,7 +356,7 @@ export const PaddlerTipsSection: React.FC = () => {
 
       case 'pfd-certified-rescue':
         return (
-          <div className="bg-slate-900 text-white rounded-xl p-4 flex flex-col justify-center border border-rose-500/70 min-h-[140px]">
+          <div className="bg-slate-900 text-primary-foreground rounded-xl p-4 flex flex-col justify-center border border-rose-500/70 min-h-[140px]">
             <div className="flex items-center justify-between mb-2 pb-1 border-b border-slate-700">
               <span className="text-xs font-bold text-rose-300 flex items-center gap-1.5">
                 <span>🦺 認定PFD ＆ クイックリリースの鉄則</span>
@@ -409,13 +409,13 @@ export const PaddlerTipsSection: React.FC = () => {
     return (
       <div
         key={tip.id}
-        className="bg-white rounded-2xl border-2 border-slate-200 hover:border-teal-400 p-6 sm:p-8 shadow-sm hover:shadow-md transition-all space-y-5"
+        className="bg-card rounded-2xl border-2 border-border hover:border-teal-400 p-6 sm:p-8 shadow-sm hover:shadow-md transition-all space-y-5"
       >
         {/* Header Row: Number + Category Badge + Title */}
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-slate-200 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-border pb-4">
           <div className="space-y-1">
             <div className="flex items-center gap-2.5">
-              <span className="h-8 px-2.5 rounded-xl bg-teal-600 text-white font-mono font-black text-xs sm:text-sm flex items-center justify-center shrink-0 shadow-xs">
+              <span className="h-8 px-2.5 rounded-xl bg-primary text-primary-foreground font-mono font-black text-xs sm:text-sm flex items-center justify-center shrink-0 shadow-xs">
                 {tip.number}
               </span>
               <span
@@ -424,10 +424,10 @@ export const PaddlerTipsSection: React.FC = () => {
                 {tip.categoryLabel}
               </span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-black text-slate-900 pt-1 leading-snug">
+            <h3 className="text-xl sm:text-2xl font-black text-foreground pt-1 leading-snug">
               {tip.title}
             </h3>
-            <p className="text-xs sm:text-sm font-bold text-teal-800">
+            <p className="text-xs sm:text-sm font-bold text-primary">
               {tip.subtitle}
             </p>
           </div>
@@ -446,20 +446,20 @@ export const PaddlerTipsSection: React.FC = () => {
         {renderIllustration(tip.illustrationType)}
 
         {/* Explanation Text */}
-        <div className="text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+        <div className="text-xs sm:text-sm text-foreground/80 leading-relaxed space-y-2">
           <p>{tip.explanation}</p>
         </div>
 
         {/* Action Protocol Checklist */}
-        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-2">
-          <span className="text-xs font-bold text-slate-900 block flex items-center gap-1.5">
-            <CheckCircle2 className="w-3.5 h-3.5 text-teal-600" />
+        <div className="bg-secondary border border-border rounded-xl p-4 space-y-2">
+          <span className="text-xs font-bold text-foreground block flex items-center gap-1.5">
+            <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
             現場での実践プロトコル:
           </span>
-          <ul className="space-y-1.5 text-xs text-slate-700">
+          <ul className="space-y-1.5 text-xs text-foreground/80">
             {tip.actionProtocol.map((act, idx) => (
               <li key={idx} className="flex items-start gap-2 leading-relaxed">
-                <span className="text-teal-600 font-bold shrink-0 mt-0.5">・</span>
+                <span className="text-primary font-bold shrink-0 mt-0.5">・</span>
                 <span>{act}</span>
               </li>
             ))}
@@ -475,19 +475,19 @@ export const PaddlerTipsSection: React.FC = () => {
         )}
 
         {/* Jazi-kayaker Circular Face & Speech Bubble Comment */}
-        <div className="pt-4 border-t border-slate-200 mt-2">
+        <div className="pt-4 border-t border-border mt-2">
           <div className="flex items-start gap-3 sm:gap-4">
             {/* Avatar Circle */}
             <div className="flex flex-col items-center shrink-0">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-teal-500 shadow-md bg-slate-800 ring-2 ring-teal-100">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-primary shadow-md bg-slate-800 ring-2 ring-teal-100">
                 <img
                   src={jaziKayakerImg}
                   alt="Jazi-kayaker（ジャジー）の顔写真"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className="text-[11px] font-black text-slate-800 font-mono mt-1">Jazi-kayaker</span>
-              <span className="text-[9px] text-teal-700 font-bold bg-teal-50 px-1 rounded border border-teal-200">
+              <span className="text-[11px] font-black text-foreground font-mono mt-1">Jazi-kayaker</span>
+              <span className="text-[9px] text-primary font-bold bg-accent px-1 rounded border border-teal-200">
                 土佐のいごっそう
               </span>
             </div>
@@ -497,11 +497,11 @@ export const PaddlerTipsSection: React.FC = () => {
               {/* Triangle Tail */}
               <div className="hidden sm:block absolute -left-2 top-4 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-teal-100/90" />
 
-              <div className="bg-teal-50/80 border border-teal-200 rounded-2xl p-4 text-xs sm:text-sm text-slate-800 shadow-xs relative">
+              <div className="bg-accent/80 border border-teal-200 rounded-2xl p-4 text-xs sm:text-sm text-foreground shadow-xs relative">
                 {/* Bubble Top Meta Row */}
-                <div className="flex items-center justify-between gap-2 mb-2 pb-1.5 border-b border-teal-200/60 text-xs font-bold text-teal-900">
+                <div className="flex items-center justify-between gap-2 mb-2 pb-1.5 border-b border-teal-200/60 text-xs font-bold text-primary">
                   <span className="flex items-center gap-1.5">
-                    <MessageSquareQuote className="w-4 h-4 text-teal-600 shrink-0" />
+                    <MessageSquareQuote className="w-4 h-4 text-primary shrink-0" />
                     <span>Jazi（ジャジー）の現場の生の声</span>
                   </span>
 
@@ -510,7 +510,7 @@ export const PaddlerTipsSection: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => handleResetComment(tip.id)}
-                        className="text-[10px] text-slate-500 hover:text-rose-600 underline flex items-center gap-1 transition-colors"
+                        className="text-[10px] text-muted-foreground hover:text-rose-600 underline flex items-center gap-1 transition-colors"
                         title="初期コメントに戻す"
                       >
                         <Undo2 className="w-2.5 h-2.5" />
@@ -522,9 +522,9 @@ export const PaddlerTipsSection: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => handleStartEdit(tip.id, currentComment)}
-                        className="text-[11px] font-semibold text-teal-800 hover:text-teal-950 bg-white hover:bg-teal-50 px-2 py-0.5 rounded-md border border-teal-300 shadow-2xs transition-colors flex items-center gap-1"
+                        className="text-[11px] font-semibold text-primary hover:text-teal-950 bg-card hover:bg-accent px-2 py-0.5 rounded-md border border-teal-300 shadow-2xs transition-colors flex items-center gap-1"
                       >
-                        <Pencil className="w-3 h-3 text-teal-600" />
+                        <Pencil className="w-3 h-3 text-primary" />
                         <span>編集</span>
                       </button>
                     ) : null}
@@ -538,28 +538,28 @@ export const PaddlerTipsSection: React.FC = () => {
                       value={editText}
                       onChange={(e) => setEditText(e.target.value)}
                       rows={3}
-                      className="w-full text-xs sm:text-sm p-2.5 rounded-lg border border-teal-400 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-inner"
+                      className="w-full text-xs sm:text-sm p-2.5 rounded-lg border border-teal-400 bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-teal-500 shadow-inner"
                       placeholder="Jazi（ジャジー）のコメントを自由に入力..."
                     />
                     <div className="flex justify-end gap-2">
                       <button
                         type="button"
                         onClick={handleCancelEdit}
-                        className="px-3 py-1 text-xs text-slate-600 hover:text-slate-900 bg-white rounded border border-slate-300 transition-colors"
+                        className="px-3 py-1 text-xs text-muted-foreground hover:text-foreground bg-card rounded border border-border transition-colors"
                       >
                         キャンセル
                       </button>
                       <button
                         type="button"
                         onClick={() => handleSaveComment(tip.id)}
-                        className="px-3.5 py-1 text-xs font-bold text-white bg-teal-600 hover:bg-teal-500 rounded shadow-xs transition-colors"
+                        className="px-3.5 py-1 text-xs font-bold text-primary-foreground bg-primary hover:bg-primary rounded shadow-xs transition-colors"
                       >
                         保存する
                       </button>
                     </div>
                   </div>
                 ) : (
-                  <p className="leading-relaxed text-slate-800 font-medium">
+                  <p className="leading-relaxed text-foreground font-medium">
                     「{currentComment}」
                   </p>
                 )}
@@ -572,22 +572,22 @@ export const PaddlerTipsSection: React.FC = () => {
   };
 
   return (
-    <section id="paddler-tips" className="py-20 lg:py-28 bg-slate-50 border-b border-slate-300">
+    <section id="paddler-tips" className="py-20 lg:py-28 bg-secondary border-b border-border">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* ========================================================================= */}
         {/* CHAPTER 1: カヤッカーなら知っててTips 16選（実践Tips 13選） */}
         {/* ========================================================================= */}
         <div className="space-y-10">
-          <div className="border-b border-slate-300 pb-8">
-            <div className="flex items-center gap-2 text-xs font-mono text-teal-800 font-bold mb-2 uppercase tracking-wider">
-              <span className="px-2 py-0.5 bg-teal-100 rounded text-teal-900">Section 01-C</span>
+          <div className="border-b border-border pb-8">
+            <div className="flex items-center gap-2 text-xs font-mono text-primary font-bold mb-2 uppercase tracking-wider">
+              <span className="px-2 py-0.5 bg-accent rounded text-primary">Section 01-C</span>
               <span aria-hidden="true">·</span>
               <span>Essential River Tips</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
               カヤッカーなら知っててTips 16選
             </h2>
-            <p className="text-slate-700 text-base mt-2 max-w-3xl leading-relaxed">
+            <p className="text-foreground/80 text-base mt-2 max-w-3xl leading-relaxed">
               教科書には小さくしか書かれていないけれど、ベテランが命を守るために身体で覚えている「川の実践知恵袋 14選」。
               事故を未然に防ぎ、一生涯楽しく安全にパドリングを続けるための必読Tipsです。
             </p>
@@ -601,8 +601,8 @@ export const PaddlerTipsSection: React.FC = () => {
           {/* ========================================================================= */}
           {/* HARMONY BANNER: 「カヤックは川と調和する。他人にも迷惑かけない」 */}
           {/* ========================================================================= */}
-          <div className="bg-slate-950 text-white rounded-3xl p-8 sm:p-12 border-2 border-teal-400/40 shadow-2xl relative overflow-hidden space-y-6">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="bg-slate-950 text-primary-foreground rounded-3xl p-8 sm:p-12 border-2 border-teal-400/40 shadow-2xl relative overflow-hidden space-y-6">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 space-y-4 max-w-3xl">
@@ -626,14 +626,14 @@ export const PaddlerTipsSection: React.FC = () => {
               </p>
 
               <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="flex items-center gap-2 text-xs text-slate-400">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground/70">
                   <ShieldCheck className="w-4 h-4 text-teal-400" />
                   <span>川を愛し、川に敬意を払い、周囲と調和して下るのがカヤッカーの誇り</span>
                 </div>
 
                 <a
                   href="#kayaker-essence"
-                  className="px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-teal-500/20 whitespace-nowrap"
+                  className="px-6 py-3 rounded-xl bg-primary hover:bg-teal-400 text-slate-950 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-teal-500/20 whitespace-nowrap"
                 >
                   <span>続いて新章：カヤッカーなら知っててEssenceへ</span>
                   <ArrowDown className="w-4 h-4" />
@@ -646,17 +646,17 @@ export const PaddlerTipsSection: React.FC = () => {
         {/* ========================================================================= */}
         {/* CHAPTER 2: カヤッカーなら知っててEssence（新章） */}
         {/* ========================================================================= */}
-        <div id="kayaker-essence" className="pt-16 border-t-2 border-slate-300 space-y-10">
-          <div className="border-b border-slate-300 pb-8">
+        <div id="kayaker-essence" className="pt-16 border-t-2 border-border space-y-10">
+          <div className="border-b border-border pb-8">
             <div className="flex items-center gap-2 text-xs font-mono text-amber-800 font-bold mb-2 uppercase tracking-wider">
               <span className="px-2 py-0.5 bg-amber-100 rounded text-amber-900">Section 01-D</span>
               <span aria-hidden="true">·</span>
               <span>Core River Essence & Body Dynamics</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
               カヤッカーなら知っててEssence
             </h2>
-            <p className="text-slate-700 text-base mt-2 max-w-3xl leading-relaxed">
+            <p className="text-foreground/80 text-base mt-2 max-w-3xl leading-relaxed">
               激流の物理法則と命のギアに身体を委ねる「4大エッセンス（真理・力学・パドラー精神・認定ギア）」。
               無理に抗わず、流れと一体になって難所を攻略するための身体感覚と不変の哲学です。
             </p>
@@ -670,8 +670,8 @@ export const PaddlerTipsSection: React.FC = () => {
           {/* ========================================================================= */}
           {/* MOVED ANOMALY BANNER: 「知識に学ぶ賢者であれ！」 */}
           {/* ========================================================================= */}
-          <div className="bg-slate-950 text-white rounded-3xl p-8 sm:p-12 border-2 border-amber-400/40 shadow-2xl relative overflow-hidden space-y-6">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="bg-slate-950 text-primary-foreground rounded-3xl p-8 sm:p-12 border-2 border-amber-400/40 shadow-2xl relative overflow-hidden space-y-6">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 space-y-4 max-w-3xl">
@@ -695,7 +695,7 @@ export const PaddlerTipsSection: React.FC = () => {
               </p>
 
               <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="flex items-center gap-2 text-xs text-slate-400">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground/70">
                   <ShieldCheck className="w-4 h-4 text-teal-400" />
                   <span>愚者は己の経験に学び、賢者は先人の知識（歴史）に学ぶ</span>
                 </div>
