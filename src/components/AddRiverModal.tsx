@@ -61,15 +61,15 @@ export const AddRiverModal: React.FC<AddRiverModalProps> = ({ isOpen, onClose, o
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
-      <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto shadow-2xl p-6">
-        <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-5">
+      <div className="bg-card border border-border rounded-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto shadow-2xl p-6">
+        <div className="flex items-center justify-between pb-4 border-b border-border/60 mb-5">
           <div className="flex items-center gap-2">
-            <Compass className="w-5 h-5 text-teal-600" />
-            <h3 className="text-lg font-bold text-slate-900">川のスポット・ゲレンデを登録</h3>
+            <Compass className="w-5 h-5 text-primary" />
+            <h3 className="text-lg font-bold text-foreground">川のスポット・ゲレンデを登録</h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-100"
+            className="p-1.5 text-muted-foreground/70 hover:text-foreground/80 rounded-lg hover:bg-muted"
           >
             <X className="w-5 h-5" />
           </button>
@@ -78,7 +78,7 @@ export const AddRiverModal: React.FC<AddRiverModalProps> = ({ isOpen, onClose, o
         <form onSubmit={handleSubmit} className="space-y-4 text-xs">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-slate-700 font-medium mb-1">
+              <label className="block text-foreground/80 font-medium mb-1">
                 区間名・スポット名 <span className="text-red-500">*</span>
               </label>
               <input
@@ -87,12 +87,12 @@ export const AddRiverModal: React.FC<AddRiverModalProps> = ({ isOpen, onClose, o
                 placeholder="例: 長良川・洲原〜美濃"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
               />
             </div>
 
             <div>
-              <label className="block text-slate-700 font-medium mb-1">
+              <label className="block text-foreground/80 font-medium mb-1">
                 河川名 <span className="text-red-500">*</span>
               </label>
               <input
@@ -101,18 +101,18 @@ export const AddRiverModal: React.FC<AddRiverModalProps> = ({ isOpen, onClose, o
                 placeholder="例: 長良川、多摩川"
                 value={riverName}
                 onChange={(e) => setRiverName(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-slate-700 font-medium mb-1">地域</label>
+              <label className="block text-foreground/80 font-medium mb-1">地域</label>
               <select
                 value={region}
                 onChange={(e) => setRegion(e.target.value as any)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground focus:outline-none focus:border-primary focus:bg-card"
               >
                 <option value="関東">関東</option>
                 <option value="中部・甲信越">中部・甲信越</option>
@@ -124,22 +124,22 @@ export const AddRiverModal: React.FC<AddRiverModalProps> = ({ isOpen, onClose, o
             </div>
 
             <div>
-              <label className="block text-slate-700 font-medium mb-1">都道府県</label>
+              <label className="block text-foreground/80 font-medium mb-1">都道府県</label>
               <input
                 type="text"
                 placeholder="例: 岐阜県、東京都"
                 value={prefecture}
                 onChange={(e) => setPrefecture(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
               />
             </div>
 
             <div>
-              <label className="block text-slate-700 font-medium mb-1">難易度クラス</label>
+              <label className="block text-foreground/80 font-medium mb-1">難易度クラス</label>
               <select
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value as any)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground focus:outline-none focus:border-primary focus:bg-card"
               >
                 <option value="Class I">Class I (初級)</option>
                 <option value="Class II">Class II (初中級)</option>
@@ -152,73 +152,73 @@ export const AddRiverModal: React.FC<AddRiverModalProps> = ({ isOpen, onClose, o
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-slate-700 font-medium mb-1">エントリー（プットイン）</label>
+              <label className="block text-foreground/80 font-medium mb-1">エントリー（プットイン）</label>
               <input
                 type="text"
                 placeholder="例: ○○橋上流右岸"
                 value={putIn}
                 onChange={(e) => setPutIn(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
               />
             </div>
 
             <div>
-              <label className="block text-slate-700 font-medium mb-1">イグジット（テイクアウト）</label>
+              <label className="block text-foreground/80 font-medium mb-1">イグジット（テイクアウト）</label>
               <input
                 type="text"
                 placeholder="例: ○○河原公園"
                 value={takeOut}
                 onChange={(e) => setTakeOut(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
               />
             </div>
 
             <div>
-              <label className="block text-slate-700 font-medium mb-1">区間距離 (km)</label>
+              <label className="block text-foreground/80 font-medium mb-1">区間距離 (km)</label>
               <input
                 type="number"
                 step="0.5"
                 placeholder="5.0"
                 value={distanceKm}
                 onChange={(e) => setDistanceKm(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-slate-700 font-medium mb-1">コース概要・特徴</label>
+            <label className="block text-foreground/80 font-medium mb-1">コース概要・特徴</label>
             <textarea
               rows={2}
               placeholder="瀬の様子、波立ち、練習に適したポイントなどを記載"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+              className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
             />
           </div>
 
           <div>
-            <label className="block text-slate-700 font-medium mb-1">危険箇所・注意点（カンマ区切り）</label>
+            <label className="block text-foreground/80 font-medium mb-1">危険箇所・注意点（カンマ区切り）</label>
             <input
               type="text"
               placeholder="例: 橋脚のアンダーカット, 倒木ストレーナー, 釣り人配慮"
               value={hazardsInput}
               onChange={(e) => setHazardsInput(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+              className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
             />
           </div>
 
-          <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
+          <div className="flex items-center justify-end gap-3 pt-4 border-t border-border/60">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-xs text-slate-600 hover:text-slate-900 rounded-lg border border-slate-200 hover:bg-slate-50"
+              className="px-4 py-2 text-xs text-muted-foreground hover:text-foreground rounded-lg border border-border hover:bg-secondary"
             >
               キャンセル
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-semibold text-white bg-teal-600 rounded-lg hover:bg-teal-500 transition-colors flex items-center gap-1.5 shadow-xs"
+              className="px-5 py-2 text-xs font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary transition-colors flex items-center gap-1.5 shadow-xs"
             >
               <Plus className="w-4 h-4" />
               <span>マップに追加</span>

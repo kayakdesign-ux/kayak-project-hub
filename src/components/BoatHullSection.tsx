@@ -23,34 +23,34 @@ export const BoatHullSection: React.FC = () => {
     BOAT_HULL_TYPES.find((h) => h.id === selectedHullId) || BOAT_HULL_TYPES[0];
 
   return (
-    <div className="bg-white rounded-2xl border-2 border-slate-300 p-6 lg:p-10 mb-16 shadow-md">
+    <div className="bg-card rounded-2xl border-2 border-border p-6 lg:p-10 mb-16 shadow-md">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-slate-200 gap-4 mb-8">
+      <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-border gap-4 mb-8">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono text-teal-800 font-bold mb-1.5 uppercase tracking-wider">
-            <span className="px-2 py-0.5 bg-teal-100 rounded text-teal-900">Feature 1-C</span>
+          <div className="flex items-center gap-2 text-xs font-mono text-primary font-bold mb-1.5 uppercase tracking-wider">
+            <span className="px-2 py-0.5 bg-accent rounded text-primary">Feature 1-C</span>
             <span aria-hidden="true">·</span>
             <span>Hull Design Dynamics</span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
             ボートの底（ハル形状）の違い比較
           </h3>
-          <p className="text-sm text-slate-600 mt-1 max-w-3xl leading-relaxed">
+          <p className="text-sm text-muted-foreground mt-1 max-w-3xl leading-relaxed">
             ホワイトウォーターカヤックの乗り味・安定性・ロールのしやすさは「船底の形（ハル形状）」で決定づけられます。
-            昔ながらの<span className="font-bold text-slate-800">ラウンド</span>から、現代の定番<span className="font-bold text-slate-800">ボックス</span>、そして最新の<span className="font-bold text-slate-800">ミックスラウンド＆ミックスフラット</span>まで4大形状を徹底比較！
+            昔ながらの<span className="font-bold text-foreground">ラウンド</span>から、現代の定番<span className="font-bold text-foreground">ボックス</span>、そして最新の<span className="font-bold text-foreground">ミックスラウンド＆ミックスフラット</span>まで4大形状を徹底比較！
           </p>
         </div>
 
         {/* Quick Shape Selector */}
-        <div className="flex items-center p-1.5 bg-slate-100 rounded-xl border border-slate-200 overflow-x-auto">
+        <div className="flex items-center p-1.5 bg-muted rounded-xl border border-border overflow-x-auto">
           {BOAT_HULL_TYPES.map((hull) => (
             <button
               key={hull.id}
               onClick={() => setSelectedHullId(hull.id)}
               className={`px-3.5 py-1.5 text-xs font-bold rounded-lg transition-all whitespace-nowrap shrink-0 ${
                 selectedHullId === hull.id
-                  ? 'bg-teal-600 text-white shadow-xs'
-                  : 'text-slate-700 hover:text-slate-900 hover:bg-slate-200/60'
+                  ? 'bg-primary text-primary-foreground shadow-xs'
+                  : 'text-foreground/80 hover:text-foreground hover:bg-muted/60'
               }`}
             >
               {hull.name}
@@ -69,8 +69,8 @@ export const BoatHullSection: React.FC = () => {
               onClick={() => setSelectedHullId(hull.id)}
               className={`rounded-xl border-2 p-5 transition-all cursor-pointer flex flex-col justify-between ${
                 isSelected
-                  ? 'bg-teal-50/50 border-teal-500 shadow-md ring-2 ring-teal-200'
-                  : 'bg-slate-50/60 border-slate-200 hover:border-slate-400 hover:bg-white'
+                  ? 'bg-accent/50 border-primary shadow-md ring-2 ring-teal-200'
+                  : 'bg-secondary/60 border-border hover:border-slate-400 hover:bg-card'
               }`}
             >
               <div>
@@ -80,16 +80,16 @@ export const BoatHullSection: React.FC = () => {
                     {hull.era}
                   </span>
                   {isSelected && (
-                    <span className="text-[10px] font-bold text-teal-700 bg-teal-100 px-1.5 py-0.5 rounded">
+                    <span className="text-[10px] font-bold text-primary bg-accent px-1.5 py-0.5 rounded">
                       選択中
                     </span>
                   )}
                 </div>
 
-                <h4 className="text-lg font-black text-slate-900 mb-0.5">
+                <h4 className="text-lg font-black text-foreground mb-0.5">
                   {hull.name}
                 </h4>
-                <div className="text-[11px] font-mono text-slate-500 mb-3">
+                <div className="text-[11px] font-mono text-muted-foreground mb-3">
                   {hull.enName}
                 </div>
 
@@ -99,37 +99,37 @@ export const BoatHullSection: React.FC = () => {
                 </div>
 
                 {/* Key Feel Callout */}
-                <div className="bg-white rounded-lg p-2.5 border border-slate-200 mb-3 shadow-2xs">
-                  <span className="text-[10px] text-slate-500 font-bold block mb-0.5">乗った感覚：</span>
-                  <span className="text-xs sm:text-sm font-black text-teal-800 block">
+                <div className="bg-card rounded-lg p-2.5 border border-border mb-3 shadow-2xs">
+                  <span className="text-[10px] text-muted-foreground font-bold block mb-0.5">乗った感覚：</span>
+                  <span className="text-xs sm:text-sm font-black text-primary block">
                     {hull.feel}
                   </span>
                 </div>
 
                 {/* Quick Rating Grid */}
-                <div className="space-y-1.5 text-xs text-slate-700">
-                  <div className="flex justify-between border-b border-slate-200/60 pb-1">
-                    <span className="text-slate-500">一次安定性</span>
-                    <span className="font-bold text-slate-900 text-right">{hull.primaryStability.split('（')[0]}</span>
+                <div className="space-y-1.5 text-xs text-foreground/80">
+                  <div className="flex justify-between border-b border-border/60 pb-1">
+                    <span className="text-muted-foreground">一次安定性</span>
+                    <span className="font-bold text-foreground text-right">{hull.primaryStability.split('（')[0]}</span>
                   </div>
-                  <div className="flex justify-between border-b border-slate-200/60 pb-1">
-                    <span className="text-slate-500">リーンの効き</span>
-                    <span className="font-bold text-slate-900 text-right">{hull.leanEffectiveness.split('（')[0]}</span>
+                  <div className="flex justify-between border-b border-border/60 pb-1">
+                    <span className="text-muted-foreground">リーンの効き</span>
+                    <span className="font-bold text-foreground text-right">{hull.leanEffectiveness.split('（')[0]}</span>
                   </div>
-                  <div className="flex justify-between border-b border-slate-200/60 pb-1">
-                    <span className="text-slate-500">2次復元力</span>
-                    <span className="font-bold text-slate-900 text-right">{hull.secondaryStability.split('（')[0]}</span>
+                  <div className="flex justify-between border-b border-border/60 pb-1">
+                    <span className="text-muted-foreground">2次復元力</span>
+                    <span className="font-bold text-foreground text-right">{hull.secondaryStability.split('（')[0]}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-500">ロール性</span>
-                    <span className="font-bold text-slate-900 text-right">{hull.rollEase.split('（')[0]}</span>
+                    <span className="text-muted-foreground">ロール性</span>
+                    <span className="font-bold text-foreground text-right">{hull.rollEase.split('（')[0]}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-200/80 text-[11px] text-slate-500 flex items-center justify-between">
+              <div className="mt-4 pt-3 border-t border-border/80 text-[11px] text-muted-foreground flex items-center justify-between">
                 <span>詳細を見る</span>
-                <ChevronRight className="w-3.5 h-3.5 text-teal-600" />
+                <ChevronRight className="w-3.5 h-3.5 text-primary" />
               </div>
             </div>
           );
@@ -137,8 +137,8 @@ export const BoatHullSection: React.FC = () => {
       </div>
 
       {/* Selected Hull Detail Focus Card */}
-      <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 mb-12 border border-slate-800 shadow-xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="bg-slate-900 text-primary-foreground rounded-2xl p-6 sm:p-8 mb-12 border border-slate-800 shadow-xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative z-10 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
@@ -151,12 +151,12 @@ export const BoatHullSection: React.FC = () => {
                   {activeHull.era}
                 </span>
               </div>
-              <h4 className="text-2xl sm:text-3xl font-black text-white">
+              <h4 className="text-2xl sm:text-3xl font-black text-primary-foreground">
                 {activeHull.name} の構造と水上挙動
               </h4>
             </div>
 
-            <div className="px-4 py-2 rounded-xl bg-teal-950/80 border border-teal-500/50 text-teal-300 font-bold text-sm flex items-center gap-2">
+            <div className="px-4 py-2 rounded-xl bg-teal-950/80 border border-primary/50 text-teal-300 font-bold text-sm flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-teal-400" />
               <span>乗艇感覚：{activeHull.feel}</span>
             </div>
@@ -204,7 +204,7 @@ export const BoatHullSection: React.FC = () => {
               </div>
 
               <div className="bg-slate-950/80 rounded-xl p-4 border border-slate-800 flex items-center justify-between text-xs text-slate-300">
-                <span>直進性：<span className="font-bold text-white">{activeHull.tracking}</span></span>
+                <span>直進性：<span className="font-bold text-primary-foreground">{activeHull.tracking}</span></span>
                 <span>2次復元力：<span className="font-bold text-teal-300">{activeHull.secondaryStability}</span></span>
               </div>
             </div>
@@ -215,16 +215,16 @@ export const BoatHullSection: React.FC = () => {
       {/* Comprehensive Comparison Matrix Table */}
       <div className="space-y-4">
         <div className="flex items-center gap-2">
-          <Layers className="w-5 h-5 text-teal-600" />
-          <h4 className="text-lg sm:text-xl font-bold text-slate-900">
+          <Layers className="w-5 h-5 text-primary" />
+          <h4 className="text-lg sm:text-xl font-bold text-foreground">
             ハル形状 4大特性マトリクス比較表
           </h4>
         </div>
 
-        <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-xs">
+        <div className="overflow-x-auto rounded-xl border border-border shadow-xs">
           <table className="w-full text-left border-collapse text-xs sm:text-sm">
             <thead>
-              <tr className="bg-slate-100 text-slate-800 border-b border-slate-200 font-bold">
+              <tr className="bg-muted text-foreground border-b border-border font-bold">
                 <th className="p-3.5 sm:p-4 min-w-[140px]">比較項目</th>
                 <th className="p-3.5 sm:p-4 min-w-[150px] bg-slate-150">① ラウンド</th>
                 <th className="p-3.5 sm:p-4 min-w-[150px]">② ボックス</th>
@@ -236,16 +236,16 @@ export const BoatHullSection: React.FC = () => {
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200 text-slate-700">
+            <tbody className="divide-y divide-slate-200 text-foreground/80">
               {HULL_COMPARISON_MATRIX.map((row, idx) => (
-                <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
-                  <td className="p-3.5 sm:p-4 font-bold text-slate-900 whitespace-nowrap bg-slate-50/50">
+                <tr key={idx} className={idx % 2 === 0 ? 'bg-card' : 'bg-secondary/70'}>
+                  <td className="p-3.5 sm:p-4 font-bold text-foreground whitespace-nowrap bg-secondary/50">
                     {row.label}
                   </td>
-                  <td className="p-3.5 sm:p-4 font-medium text-slate-800">
+                  <td className="p-3.5 sm:p-4 font-medium text-foreground">
                     {row.round}
                   </td>
-                  <td className="p-3.5 sm:p-4 font-medium text-slate-800">
+                  <td className="p-3.5 sm:p-4 font-medium text-foreground">
                     {row.box}
                   </td>
                   <td className="p-3.5 sm:p-4 font-semibold text-emerald-900 bg-emerald-50/30">
@@ -262,12 +262,12 @@ export const BoatHullSection: React.FC = () => {
       </div>
 
       {/* Kayaker Expert Tip Box */}
-      <div className="mt-8 bg-teal-50 border border-teal-200 rounded-xl p-4 sm:p-5 flex items-start gap-3.5 text-xs sm:text-sm text-slate-800">
-        <Sparkles className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
+      <div className="mt-8 bg-accent border border-teal-200 rounded-xl p-4 sm:p-5 flex items-start gap-3.5 text-xs sm:text-sm text-foreground">
+        <Sparkles className="w-5 h-5 text-primary shrink-0 mt-0.5" />
         <div className="space-y-1">
           <span className="font-bold text-teal-950 block">kayakerのハル選びアドバイス：</span>
-          <p className="text-slate-700 leading-relaxed">
-            「初心者が『ロールを最速でマスターしたい』なら、引っかかりが一切ない<span className="font-bold text-slate-900">ラウンド</span>が一番楽です。しかし、現代の急流で『水流に乗って思い通りにラインを曲げたい』ならエッジの利く<span className="font-bold text-slate-900">ミックスフラット</span>や<span className="font-bold text-slate-900">ミックスラウンド</span>が圧倒的に有利。自分のパドリング目的（サーフィンしたいのか、大激流を突破したいのか）に合わせてボートの底を選んでみてください！」
+          <p className="text-foreground/80 leading-relaxed">
+            「初心者が『ロールを最速でマスターしたい』なら、引っかかりが一切ない<span className="font-bold text-foreground">ラウンド</span>が一番楽です。しかし、現代の急流で『水流に乗って思い通りにラインを曲げたい』ならエッジの利く<span className="font-bold text-foreground">ミックスフラット</span>や<span className="font-bold text-foreground">ミックスラウンド</span>が圧倒的に有利。自分のパドリング目的（サーフィンしたいのか、大激流を突破したいのか）に合わせてボートの底を選んでみてください！」
           </p>
         </div>
       </div>

@@ -46,20 +46,20 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
   };
 
   return (
-    <section id="gear-guide" className="py-20 lg:py-28 bg-white border-b border-slate-300">
+    <section id="gear-guide" className="py-20 lg:py-28 bg-card border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 border-b border-slate-200 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 border-b border-border pb-8">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-teal-800 font-bold mb-2 uppercase tracking-wider">
-              <span className="px-2 py-0.5 bg-teal-100 rounded text-teal-900">Section 01</span>
+            <div className="flex items-center gap-2 text-xs font-mono text-primary font-bold mb-2 uppercase tracking-wider">
+              <span className="px-2 py-0.5 bg-accent rounded text-primary">Section 01</span>
               <span aria-hidden="true">·</span>
               <span>Equipment Guide & Selection</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-foreground tracking-tight">
               初心者向けボート・ギア選びの指針
             </h2>
-            <p className="text-slate-700 text-base mt-2 max-w-2xl leading-relaxed">
+            <p className="text-foreground/80 text-base mt-2 max-w-2xl leading-relaxed">
               ホワイトウォーターカヤックは用途（川下り・波乗り・大激流）によって艇の形状が劇的に異なります。
               失敗しない最初の一艇と、命を守る安全装備の選び方を詳しく解説します。
             </p>
@@ -67,7 +67,7 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
 
           <button
             onClick={onOpenQuiz}
-            className="self-start md:self-auto px-6 py-3 text-sm font-bold text-white bg-teal-600 rounded-lg hover:bg-teal-500 transition-colors whitespace-nowrap flex items-center gap-2 shadow-sm shrink-0"
+            className="self-start md:self-auto px-6 py-3 text-sm font-bold text-primary-foreground bg-primary rounded-lg hover:bg-primary transition-colors whitespace-nowrap flex items-center gap-2 shadow-sm shrink-0"
           >
             <Sparkles className="w-4 h-4" />
             <span>自分に合うギアを3分で診断</span>
@@ -75,25 +75,25 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
         </div>
 
         {/* Feature 1: Boat Categories Interactive Selector */}
-        <div className="bg-slate-50/80 rounded-2xl border-2 border-slate-300 p-6 lg:p-10 mb-16 shadow-md">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 gap-4">
+        <div className="bg-secondary/80 rounded-2xl border-2 border-border p-6 lg:p-10 mb-16 shadow-md">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-border gap-4">
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900">ホワイトウォーターボートの4大種別</h3>
-              <p className="text-sm text-slate-600 mt-1">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground">ホワイトウォーターボートの4大種別</h3>
+              <p className="text-sm text-muted-foreground mt-1">
                 形状と浮力配分の違いを知り、目指すパドリングスタイルに最適な艇を選びましょう
               </p>
             </div>
 
             {/* Functional segmented controls */}
-            <div className="flex items-center p-1.5 bg-slate-200/80 rounded-xl border border-slate-300 overflow-x-auto">
+            <div className="flex items-center p-1.5 bg-muted/80 rounded-xl border border-border overflow-x-auto">
               {BOAT_TYPES.map((boat) => (
                 <button
                   key={boat.id}
                   onClick={() => setSelectedBoatId(boat.id)}
                   className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all whitespace-nowrap shrink-0 ${
                     selectedBoatId === boat.id
-                      ? 'bg-teal-600 text-white shadow-sm'
-                      : 'text-slate-700 hover:text-slate-900 hover:bg-slate-300/50'
+                      ? 'bg-primary text-primary-foreground shadow-sm'
+                      : 'text-foreground/80 hover:text-foreground hover:bg-border/50'
                   }`}
                 >
                   {boat.name}
@@ -106,7 +106,7 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pt-8 items-start">
             {/* Visual Photo & Quick Specs */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="relative rounded-xl overflow-hidden border-2 border-slate-300 bg-white aspect-[4/3] shadow-md">
+              <div className="relative rounded-xl overflow-hidden border-2 border-border bg-card aspect-[4/3] shadow-md">
                 {!imgError ? (
                   <img
                     src={kayakTypesImg || "/images/kayak_types_guide_1792152930624.jpg"}
@@ -121,33 +121,33 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
                 ) : null}
 
                 {(!imgLoaded || imgError) && (
-                  <div className="absolute inset-0 bg-slate-100 flex flex-col items-center justify-center p-4">
-                    <Anchor className="w-10 h-10 text-teal-600 mb-2" />
-                    <span className="text-xs text-slate-500">Boat Gallery</span>
+                  <div className="absolute inset-0 bg-muted flex flex-col items-center justify-center p-4">
+                    <Anchor className="w-10 h-10 text-primary mb-2" />
+                    <span className="text-xs text-muted-foreground">Boat Gallery</span>
                   </div>
                 )}
 
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
-                <div className="absolute bottom-3 left-3 right-3 text-xs text-white">
+                <div className="absolute bottom-3 left-3 right-3 text-xs text-primary-foreground">
                   <span className="text-teal-300 font-bold text-sm">{activeBoat.name}</span>
                   <span className="text-slate-200 ml-1.5">({activeBoat.enName})</span>
                 </div>
               </div>
 
               {/* Specs Box */}
-              <div className="bg-white rounded-xl p-5 border border-slate-300 space-y-3 text-xs sm:text-sm shadow-xs">
-                <div className="flex justify-between items-center text-slate-700 border-b border-slate-100 pb-2">
-                  <span className="text-slate-500 font-medium">標準浮力（Volume）</span>
-                  <span className="font-mono font-bold text-slate-900 text-sm">{activeBoat.volumeRange}</span>
+              <div className="bg-card rounded-xl p-5 border border-border space-y-3 text-xs sm:text-sm shadow-xs">
+                <div className="flex justify-between items-center text-foreground/80 border-b border-border/60 pb-2">
+                  <span className="text-muted-foreground font-medium">標準浮力（Volume）</span>
+                  <span className="font-mono font-bold text-foreground text-sm">{activeBoat.volumeRange}</span>
                 </div>
-                <div className="flex justify-between items-center text-slate-700 border-b border-slate-100 pb-2">
-                  <span className="text-slate-500 font-medium">全長レンジ（Length）</span>
-                  <span className="font-mono font-bold text-slate-900 text-sm">{activeBoat.lengthRange}</span>
+                <div className="flex justify-between items-center text-foreground/80 border-b border-border/60 pb-2">
+                  <span className="text-muted-foreground font-medium">全長レンジ（Length）</span>
+                  <span className="font-mono font-bold text-foreground text-sm">{activeBoat.lengthRange}</span>
                 </div>
-                <div className="pt-1 text-slate-700">
-                  <span className="text-slate-900 font-bold">代表モデル：</span>{' '}
-                  <span className="text-slate-800">{activeBoat.popularModels.join(', ')}</span>
+                <div className="pt-1 text-foreground/80">
+                  <span className="text-foreground font-bold">代表モデル：</span>{' '}
+                  <span className="text-foreground">{activeBoat.popularModels.join(', ')}</span>
                 </div>
               </div>
             </div>
@@ -155,18 +155,18 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
             {/* Detailed Explanations */}
             <div className="lg:col-span-7 space-y-6">
               <div>
-                <h4 className="text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                <h4 className="text-2xl font-extrabold text-foreground flex items-center gap-2">
                   <span>{activeBoat.name}</span>
-                  <span className="text-base font-normal text-slate-500">/ {activeBoat.enName}</span>
+                  <span className="text-base font-normal text-muted-foreground">/ {activeBoat.enName}</span>
                 </h4>
-                <p className="text-sm sm:text-base text-slate-700 mt-2.5 leading-relaxed font-normal">
+                <p className="text-sm sm:text-base text-foreground/80 mt-2.5 leading-relaxed font-normal">
                   {activeBoat.shortDesc}
                 </p>
               </div>
 
               {/* Suitability */}
-              <div className="bg-teal-50 border-2 border-teal-200 rounded-xl p-5 text-sm text-teal-950 leading-relaxed shadow-xs">
-                <span className="font-bold text-teal-900 block mb-1">こんな人・シーンに最適：</span>
+              <div className="bg-accent border-2 border-teal-200 rounded-xl p-5 text-sm text-teal-950 leading-relaxed shadow-xs">
+                <span className="font-bold text-primary block mb-1">こんな人・シーンに最適：</span>
                 {activeBoat.suitability}
               </div>
 
@@ -177,7 +177,7 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
                     <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                     <span>メリット・強み</span>
                   </h5>
-                  <ul className="space-y-2 text-xs sm:text-sm text-slate-800">
+                  <ul className="space-y-2 text-xs sm:text-sm text-foreground">
                     {activeBoat.pros.map((p, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="text-emerald-600 font-bold leading-none mt-1">•</span>
@@ -192,7 +192,7 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
                     <AlertOctagon className="w-5 h-5 text-amber-600" />
                     <span>弱点・注意すべき点</span>
                   </h5>
-                  <ul className="space-y-2 text-xs sm:text-sm text-slate-800">
+                  <ul className="space-y-2 text-xs sm:text-sm text-foreground">
                     {activeBoat.cons.map((c, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="text-amber-600 font-bold leading-none mt-1">•</span>
@@ -204,12 +204,12 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
               </div>
 
               {/* Features List */}
-              <div className="border-t border-slate-200 pt-4">
-                <h5 className="text-sm font-bold text-slate-900 mb-3">構造的特徴：</h5>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-800">
+              <div className="border-t border-border pt-4">
+                <h5 className="text-sm font-bold text-foreground mb-3">構造的特徴：</h5>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-foreground">
                   {activeBoat.features.map((f, i) => (
                     <div key={i} className="flex items-center gap-2.5">
-                      <span className="w-2 h-2 rounded-full bg-teal-600 shrink-0" />
+                      <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
                       <span>{f}</span>
                     </div>
                   ))}
@@ -227,19 +227,19 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
 
         {/* Feature 2: Essential Gear Catalog with Categorized Navigation */}
         <div className="space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-4">
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="text-2xl font-bold text-slate-900">
+                <h3 className="text-2xl font-bold text-foreground">
                   命を守るホワイトウォーター ギアカタログ
                 </h3>
                 {affiliateConfig.showPrNotice && (
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 bg-slate-200 text-slate-700 rounded">
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 bg-muted text-foreground/80 rounded">
                     PR
                   </span>
                 )}
               </div>
-              <p className="text-sm text-slate-600 mt-1">
+              <p className="text-sm text-muted-foreground mt-1">
                 基本必須ギア4点・レスキュー装備4点・ウエア3点・冬季防寒1点（計12品）の安全基準と実売比較
               </p>
             </div>
@@ -258,8 +258,8 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
                   onClick={() => setSelectedCategory(tab.id)}
                   className={`px-3.5 py-1.5 text-xs font-bold rounded-lg transition-colors whitespace-nowrap shrink-0 ${
                     selectedCategory === tab.id
-                      ? 'bg-teal-600 text-white shadow-sm'
-                      : 'text-slate-700 hover:text-slate-900 bg-slate-100 border border-slate-300 hover:bg-slate-200'
+                      ? 'bg-primary text-primary-foreground shadow-sm'
+                      : 'text-foreground/80 hover:text-foreground bg-muted border border-border hover:bg-muted'
                   }`}
                 >
                   {tab.label}
@@ -270,8 +270,8 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
 
           {/* Legal PR Notice banner if enabled */}
           {affiliateConfig.showPrNotice && (
-            <div className="bg-slate-100 border border-slate-200 rounded-lg px-4 py-2 text-xs text-slate-600 flex items-center gap-2">
-              <span className="font-bold text-slate-800">【PR表記】</span>
+            <div className="bg-muted border border-border rounded-lg px-4 py-2 text-xs text-muted-foreground flex items-center gap-2">
+              <span className="font-bold text-foreground">【PR表記】</span>
               <span>{affiliateConfig.prNoticeText}</span>
             </div>
           )}
@@ -285,7 +285,7 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
               // Distinct category styles
               const groupStyle =
                 item.categoryGroup === 'basic'
-                  ? 'bg-teal-100 text-teal-900 border-teal-300'
+                  ? 'bg-accent text-primary border-teal-300'
                   : item.categoryGroup === 'rescue'
                   ? 'bg-rose-100 text-rose-900 border-rose-300'
                   : item.categoryGroup === 'wear'
@@ -295,34 +295,34 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
               return (
                 <div
                   key={item.id}
-                  className="bg-white rounded-xl border-2 border-slate-200 p-6 flex flex-col justify-between hover:border-teal-500 hover:shadow-md transition-all"
+                  className="bg-card rounded-xl border-2 border-border p-6 flex flex-col justify-between hover:border-primary hover:shadow-md transition-all"
                 >
                   <div>
-                    <div className="flex items-center justify-between text-xs mb-3 text-slate-500 border-b border-slate-100 pb-2">
+                    <div className="flex items-center justify-between text-xs mb-3 text-muted-foreground border-b border-border/60 pb-2">
                       <div className="flex items-center gap-1.5 flex-wrap">
                         <span className={`font-bold text-[11px] px-2 py-0.5 rounded border ${groupStyle}`}>
                           {item.categoryGroupName}
                         </span>
-                        <span className="font-semibold text-slate-600 text-[11px] bg-slate-100 px-1.5 py-0.5 rounded">
+                        <span className="font-semibold text-muted-foreground text-[11px] bg-muted px-1.5 py-0.5 rounded">
                           {item.essentialLevel}
                         </span>
                       </div>
-                      <span className="font-mono font-semibold text-slate-700 whitespace-nowrap">{item.priceRange}</span>
+                      <span className="font-mono font-semibold text-foreground/80 whitespace-nowrap">{item.priceRange}</span>
                     </div>
 
-                    <h4 className="text-lg font-bold text-slate-900 mb-1">{item.name}</h4>
-                    <p className="text-xs text-slate-500 font-mono mb-3">{item.enName}</p>
+                    <h4 className="text-lg font-bold text-foreground mb-1">{item.name}</h4>
+                    <p className="text-xs text-muted-foreground font-mono mb-3">{item.enName}</p>
 
-                    <p className="text-sm text-slate-700 leading-relaxed mb-4">
+                    <p className="text-sm text-foreground/80 leading-relaxed mb-4">
                       {item.description}
                     </p>
 
                     {/* Tips */}
-                    <div className="space-y-2 mb-4 bg-slate-50 p-3 rounded-lg border border-slate-200">
-                      <div className="text-xs font-bold text-slate-900">選び方・安全基準:</div>
+                    <div className="space-y-2 mb-4 bg-secondary p-3 rounded-lg border border-border">
+                      <div className="text-xs font-bold text-foreground">選び方・安全基準:</div>
                       {item.selectionTips.slice(0, 3).map((tip, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
-                          <span className="text-teal-600 font-bold leading-none mt-0.5">›</span>
+                        <div key={idx} className="flex items-start gap-2 text-xs text-foreground/80">
+                          <span className="text-primary font-bold leading-none mt-0.5">›</span>
                           <span className="leading-snug">{tip}</span>
                         </div>
                       ))}
@@ -330,8 +330,8 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
 
                     {/* Recommended Model info if present */}
                     {affProduct?.recommendedBrandModel && (
-                      <div className="mb-4 text-xs text-slate-700 bg-teal-50/50 p-2.5 rounded-lg border border-teal-200">
-                        <span className="font-bold text-teal-900 block mb-0.5">推奨モデル例：</span>
+                      <div className="mb-4 text-xs text-foreground/80 bg-accent/50 p-2.5 rounded-lg border border-teal-200">
+                        <span className="font-bold text-primary block mb-0.5">推奨モデル例：</span>
                         <span>{affProduct.recommendedBrandModel}</span>
                       </div>
                     )}
@@ -339,10 +339,10 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
                     {item.id === 'gear-paddle' && (
                       <a
                         href="#paddle-guide"
-                        className="mb-4 text-xs font-bold text-teal-700 bg-teal-50 hover:bg-teal-100 border border-teal-300 rounded-lg p-2.5 flex items-center justify-between transition-colors group"
+                        className="mb-4 text-xs font-bold text-primary bg-accent hover:bg-accent border border-teal-300 rounded-lg p-2.5 flex items-center justify-between transition-colors group"
                       >
                         <span>📐 パドルの選び方・長さ診断はこちら</span>
-                        <span className="text-teal-600 group-hover:translate-x-0.5 transition-transform">→</span>
+                        <span className="text-primary group-hover:translate-x-0.5 transition-transform">→</span>
                       </a>
                     )}
                   </div>
@@ -358,10 +358,10 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
 
                     {/* Affiliate Buy & Compare Buttons */}
                     {isEnabled && affProduct && (
-                      <div className="pt-3 border-t border-slate-200 space-y-2">
-                        <div className="text-[11px] font-bold text-slate-500 flex items-center justify-between">
+                      <div className="pt-3 border-t border-border space-y-2">
+                        <div className="text-[11px] font-bold text-muted-foreground flex items-center justify-between">
                           <span>価格・在庫をチェック</span>
-                          <span className="text-[10px] text-slate-400">※広告リンク</span>
+                          <span className="text-[10px] text-muted-foreground/70">※広告リンク</span>
                         </div>
 
                         <div className="grid grid-cols-3 gap-1.5">
@@ -393,7 +393,7 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
                                 buildAffiliateUrl(affProduct, 'rakuten', affiliateConfig)
                               )
                             }
-                            className="px-2 py-2 bg-rose-600 hover:bg-rose-500 active:bg-rose-700 text-white rounded-lg font-bold text-xs transition-colors flex items-center justify-center gap-1 shadow-xs"
+                            className="px-2 py-2 bg-rose-600 hover:bg-rose-500 active:bg-rose-700 text-primary-foreground rounded-lg font-bold text-xs transition-colors flex items-center justify-center gap-1 shadow-xs"
                           >
                             <span>楽天市場</span>
                             <ExternalLink className="w-3 h-3" />
@@ -410,7 +410,7 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
                                 buildAffiliateUrl(affProduct, 'yahoo', affiliateConfig)
                               )
                             }
-                            className="px-2 py-2 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white rounded-lg font-bold text-xs transition-colors flex items-center justify-center gap-1 shadow-xs"
+                            className="px-2 py-2 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-primary-foreground rounded-lg font-bold text-xs transition-colors flex items-center justify-center gap-1 shadow-xs"
                           >
                             <span>Yahoo!</span>
                             <ExternalLink className="w-3 h-3" />

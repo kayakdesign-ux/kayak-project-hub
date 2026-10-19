@@ -46,15 +46,15 @@ export const AddTermModal: React.FC<AddTermModalProps> = ({ isOpen, onClose, onA
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
-      <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto shadow-2xl p-6">
-        <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-5">
+      <div className="bg-card border border-border rounded-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto shadow-2xl p-6">
+        <div className="flex items-center justify-between pb-4 border-b border-border/60 mb-5">
           <div className="flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-teal-600" />
-            <h3 className="text-lg font-bold text-slate-900">新しいカヤック用語を登録</h3>
+            <BookOpen className="w-5 h-5 text-primary" />
+            <h3 className="text-lg font-bold text-foreground">新しいカヤック用語を登録</h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-100"
+            className="p-1.5 text-muted-foreground/70 hover:text-foreground/80 rounded-lg hover:bg-muted"
           >
             <X className="w-5 h-5" />
           </button>
@@ -63,7 +63,7 @@ export const AddTermModal: React.FC<AddTermModalProps> = ({ isOpen, onClose, onA
         <form onSubmit={handleSubmit} className="space-y-4 text-xs">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-slate-700 font-medium mb-1">
+              <label className="block text-foreground/80 font-medium mb-1">
                 用語名 <span className="text-red-500">*</span>
               </label>
               <input
@@ -72,40 +72,40 @@ export const AddTermModal: React.FC<AddTermModalProps> = ({ isOpen, onClose, onA
                 placeholder="例: クランチ、サーフィン"
                 value={term}
                 onChange={(e) => setTerm(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
               />
             </div>
 
             <div>
-              <label className="block text-slate-700 font-medium mb-1">読みがな（ひらがな）</label>
+              <label className="block text-foreground/80 font-medium mb-1">読みがな（ひらがな）</label>
               <input
                 type="text"
                 placeholder="例: くらんち"
                 value={kana}
                 onChange={(e) => setKana(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-slate-700 font-medium mb-1">英名（English）</label>
+              <label className="block text-foreground/80 font-medium mb-1">英名（English）</label>
               <input
                 type="text"
                 placeholder="例: Crunch / Cartwheel"
                 value={enTerm}
                 onChange={(e) => setEnTerm(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
               />
             </div>
 
             <div>
-              <label className="block text-slate-700 font-medium mb-1">分類（カテゴリー）</label>
+              <label className="block text-foreground/80 font-medium mb-1">分類（カテゴリー）</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value as any)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 focus:outline-none focus:border-teal-500 focus:bg-white"
+                className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground focus:outline-none focus:border-primary focus:bg-card"
               >
                 <option value="flow">水流・地形 (Hydrology)</option>
                 <option value="technique">パドリング技術 (Technique)</option>
@@ -117,7 +117,7 @@ export const AddTermModal: React.FC<AddTermModalProps> = ({ isOpen, onClose, onA
           </div>
 
           <div>
-            <label className="block text-slate-700 font-medium mb-1">
+            <label className="block text-foreground/80 font-medium mb-1">
               概要（一行要約） <span className="text-red-500">*</span>
             </label>
             <input
@@ -126,54 +126,54 @@ export const AddTermModal: React.FC<AddTermModalProps> = ({ isOpen, onClose, onA
               placeholder="短く分かりやすい要約を入力してください"
               value={shortDef}
               onChange={(e) => setShortDef(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+              className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
             />
           </div>
 
           <div>
-            <label className="block text-slate-700 font-medium mb-1">詳細解説・背景</label>
+            <label className="block text-foreground/80 font-medium mb-1">詳細解説・背景</label>
             <textarea
               rows={3}
               placeholder="どういう状況で発生するか、注意点やコツなどを入力"
               value={fullDef}
               onChange={(e) => setFullDef(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+              className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
             />
           </div>
 
           <div>
-            <label className="block text-slate-700 font-medium mb-1">現場での使われ方の例（例文）</label>
+            <label className="block text-foreground/80 font-medium mb-1">現場での使われ方の例（例文）</label>
             <input
               type="text"
               placeholder="例: 「あそこのエディラインは強いからしっかりエッジングして！」"
               value={contextUsage}
               onChange={(e) => setContextUsage(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+              className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
             />
           </div>
 
           <div>
-            <label className="block text-slate-700 font-medium mb-1">関連用語（カンマ区切り）</label>
+            <label className="block text-foreground/80 font-medium mb-1">関連用語（カンマ区切り）</label>
             <input
               type="text"
               placeholder="例: エディ, フェリー, ロール"
               value={relatedTermsInput}
               onChange={(e) => setRelatedTermsInput(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-teal-500 focus:bg-white"
+              className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-foreground placeholder-slate-400 focus:outline-none focus:border-primary focus:bg-card"
             />
           </div>
 
-          <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
+          <div className="flex items-center justify-end gap-3 pt-4 border-t border-border/60">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-xs text-slate-600 hover:text-slate-900 rounded-lg border border-slate-200 hover:bg-slate-50"
+              className="px-4 py-2 text-xs text-muted-foreground hover:text-foreground rounded-lg border border-border hover:bg-secondary"
             >
               キャンセル
             </button>
             <button
               type="submit"
-              className="px-5 py-2 text-xs font-semibold text-white bg-teal-600 rounded-lg hover:bg-teal-500 transition-colors flex items-center gap-1.5 shadow-xs"
+              className="px-5 py-2 text-xs font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary transition-colors flex items-center gap-1.5 shadow-xs"
             >
               <Plus className="w-4 h-4" />
               <span>用語集に追加</span>

@@ -71,9 +71,9 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-xs">
-      <div className="bg-white border-2 border-slate-300 rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
+      <div className="bg-card border-2 border-border rounded-2xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 bg-slate-900 text-white border-b border-slate-800">
+        <div className="flex items-center justify-between px-6 py-4 bg-slate-900 text-primary-foreground border-b border-slate-800">
           <div className="flex items-center gap-2.5">
             <Settings className="w-5 h-5 text-teal-400" />
             <div>
@@ -83,7 +83,7 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                   Admin Panel
                 </span>
               </h3>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-muted-foreground/70">
                 各モールのトラッキングID、個別商品リンク、PR表記、クリック数推移を一括管理
               </p>
             </div>
@@ -91,23 +91,23 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+            className="p-1.5 text-muted-foreground/70 hover:text-primary-foreground rounded-lg hover:bg-slate-800 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center gap-2 px-6 pt-3 bg-slate-100 border-b border-slate-200">
+        <div className="flex items-center gap-2 px-6 pt-3 bg-muted border-b border-border">
           <button
             onClick={() => setActiveTab('overview')}
             className={`px-4 py-2 text-xs sm:text-sm font-bold border-b-2 transition-all flex items-center gap-1.5 ${
               activeTab === 'overview'
-                ? 'border-teal-600 text-teal-800 bg-white rounded-t-lg shadow-xs'
-                : 'border-transparent text-slate-600 hover:text-slate-900'
+                ? 'border-primary text-primary bg-card rounded-t-lg shadow-xs'
+                : 'border-transparent text-muted-foreground hover:text-foreground'
             }`}
           >
-            <TrendingUp className="w-4 h-4 text-teal-600" />
+            <TrendingUp className="w-4 h-4 text-primary" />
             <span>クリック分析・統計 ({totalClicks})</span>
           </button>
 
@@ -115,11 +115,11 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
             onClick={() => setActiveTab('global')}
             className={`px-4 py-2 text-xs sm:text-sm font-bold border-b-2 transition-all flex items-center gap-1.5 ${
               activeTab === 'global'
-                ? 'border-teal-600 text-teal-800 bg-white rounded-t-lg shadow-xs'
-                : 'border-transparent text-slate-600 hover:text-slate-900'
+                ? 'border-primary text-primary bg-card rounded-t-lg shadow-xs'
+                : 'border-transparent text-muted-foreground hover:text-foreground'
             }`}
           >
-            <Settings className="w-4 h-4 text-teal-600" />
+            <Settings className="w-4 h-4 text-primary" />
             <span>基本設定・モールID・PR表記</span>
           </button>
 
@@ -127,11 +127,11 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
             onClick={() => setActiveTab('products')}
             className={`px-4 py-2 text-xs sm:text-sm font-bold border-b-2 transition-all flex items-center gap-1.5 ${
               activeTab === 'products'
-                ? 'border-teal-600 text-teal-800 bg-white rounded-t-lg shadow-xs'
-                : 'border-transparent text-slate-600 hover:text-slate-900'
+                ? 'border-primary text-primary bg-card rounded-t-lg shadow-xs'
+                : 'border-transparent text-muted-foreground hover:text-foreground'
             }`}
           >
-            <LinkIcon className="w-4 h-4 text-teal-600" />
+            <LinkIcon className="w-4 h-4 text-primary" />
             <span>個別商品アフィリエイトリンク管理 ({localProducts.length})</span>
           </button>
         </div>
@@ -143,12 +143,12 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
             <div className="space-y-6">
               {/* Metric Cards */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="bg-slate-50 border-2 border-slate-200 p-4 rounded-xl">
-                  <div className="text-xs text-slate-500 font-medium">総クリック数</div>
-                  <div className="text-2xl font-bold font-mono text-slate-900 mt-1 tabular-nums">
+                <div className="bg-secondary border-2 border-border p-4 rounded-xl">
+                  <div className="text-xs text-muted-foreground font-medium">総クリック数</div>
+                  <div className="text-2xl font-bold font-mono text-foreground mt-1 tabular-nums">
                     {totalClicks}
                   </div>
-                  <div className="text-[11px] text-slate-500 mt-1">サイト内全リンク</div>
+                  <div className="text-[11px] text-muted-foreground mt-1">サイト内全リンク</div>
                 </div>
 
                 <div className="bg-amber-50/60 border border-amber-200 p-4 rounded-xl">
@@ -177,22 +177,22 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
               </div>
 
               {/* Status Banner */}
-              <div className="bg-teal-50 border border-teal-200 rounded-xl p-4 flex items-start gap-3 text-xs text-teal-950">
-                <Shield className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
+              <div className="bg-accent border border-teal-200 rounded-xl p-4 flex items-start gap-3 text-xs text-teal-950">
+                <Shield className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-bold text-sm text-teal-900 mb-0.5">
+                  <div className="font-bold text-sm text-primary mb-0.5">
                     アフィリエイトステータス：{localConfig.isAffiliateActive ? '稼働中（有効）' : '停止中（無効）'}
                   </div>
-                  <p className="text-teal-800 leading-relaxed">
+                  <p className="text-primary leading-relaxed">
                     ユーザーが各ギアカタログや診断結果の「Amazon・楽天・Yahoo」ボタンをクリックすると、設定されたトラッキングIDまたはカスタムURLでアフィリエイト報酬が発生します。
                   </p>
                 </div>
               </div>
 
               {/* Recent Click Logs Table */}
-              <div className="bg-white border-2 border-slate-200 rounded-xl overflow-hidden shadow-xs">
-                <div className="px-4 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-                  <span className="font-bold text-xs sm:text-sm text-slate-800">
+              <div className="bg-card border-2 border-border rounded-xl overflow-hidden shadow-xs">
+                <div className="px-4 py-3 bg-secondary border-b border-border flex items-center justify-between">
+                  <span className="font-bold text-xs sm:text-sm text-foreground">
                     直近のクリック履歴（リアルタイム記録）
                   </span>
                   {clicks.length > 0 && (
@@ -207,13 +207,13 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                 </div>
 
                 {clicks.length === 0 ? (
-                  <div className="p-8 text-center text-slate-500 text-xs">
+                  <div className="p-8 text-center text-muted-foreground text-xs">
                     クリック履歴はまだありません。サイト上で商品リンクをクリックするとここに記録されます。
                   </div>
                 ) : (
                   <div className="max-h-60 overflow-y-auto divide-y divide-slate-100 text-xs">
                     {clicks.slice(0, 20).map((c) => (
-                      <div key={c.id} className="px-4 py-2.5 flex items-center justify-between hover:bg-slate-50">
+                      <div key={c.id} className="px-4 py-2.5 flex items-center justify-between hover:bg-secondary">
                         <div className="flex items-center gap-2">
                           <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                             c.platform === 'amazon'
@@ -224,9 +224,9 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                           }`}>
                             {c.platform.toUpperCase()}
                           </span>
-                          <span className="font-semibold text-slate-800">{c.gearTitle}</span>
+                          <span className="font-semibold text-foreground">{c.gearTitle}</span>
                         </div>
-                        <span className="text-slate-400 font-mono text-[11px]">{c.timestamp}</span>
+                        <span className="text-muted-foreground/70 font-mono text-[11px]">{c.timestamp}</span>
                       </div>
                     ))}
                   </div>
@@ -239,10 +239,10 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
           {activeTab === 'global' && (
             <div className="space-y-6">
               {/* Master toggle */}
-              <div className="bg-slate-50 border-2 border-slate-200 rounded-xl p-5 flex items-center justify-between">
+              <div className="bg-secondary border-2 border-border rounded-xl p-5 flex items-center justify-between">
                 <div>
-                  <div className="font-bold text-slate-900">アフィリエイト機能 全体ON/OFF</div>
-                  <div className="text-xs text-slate-500 mt-0.5">
+                  <div className="font-bold text-foreground">アフィリエイト機能 全体ON/OFF</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">
                     OFFにするとサイト上のアフィリエイト購入ボタンが非表示になります
                   </div>
                 </div>
@@ -255,20 +255,20 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                     }
                     className="sr-only peer"
                   />
-                  <div className="w-11 h-6 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+                  <div className="w-11 h-6 bg-border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-card after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-card after:border-border after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                 </label>
               </div>
 
               {/* Mall Tracking IDs */}
-              <div className="bg-white border-2 border-slate-200 rounded-xl p-5 space-y-4">
-                <h4 className="font-bold text-slate-900 text-sm">各モール アフィリエイトID / タグ設定</h4>
-                <p className="text-xs text-slate-500">
+              <div className="bg-card border-2 border-border rounded-xl p-5 space-y-4">
+                <h4 className="font-bold text-foreground text-sm">各モール アフィリエイトID / タグ設定</h4>
+                <p className="text-xs text-muted-foreground">
                   各ASP・プログラムで取得したご自身のアカウントIDを入力してください。個別URLが未設定の場合、自動的にこのIDを付与した検索リンクが生成されます。
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                   <div>
-                    <label className="block text-slate-700 font-bold text-xs mb-1">
+                    <label className="block text-foreground/80 font-bold text-xs mb-1">
                       Amazon アソシエイト トラッキングID
                     </label>
                     <input
@@ -278,12 +278,12 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                       onChange={(e) =>
                         setLocalConfig({ ...localConfig, amazonTrackingId: e.target.value })
                       }
-                      className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 focus:bg-white focus:border-teal-500 focus:outline-none font-mono"
+                      className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-xs text-foreground focus:bg-card focus:border-primary focus:outline-none font-mono"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-slate-700 font-bold text-xs mb-1">
+                    <label className="block text-foreground/80 font-bold text-xs mb-1">
                       楽天 アフィリエイトID
                     </label>
                     <input
@@ -293,12 +293,12 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                       onChange={(e) =>
                         setLocalConfig({ ...localConfig, rakutenAffiliateId: e.target.value })
                       }
-                      className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 focus:bg-white focus:border-teal-500 focus:outline-none font-mono"
+                      className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-xs text-foreground focus:bg-card focus:border-primary focus:outline-none font-mono"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-slate-700 font-bold text-xs mb-1">
+                    <label className="block text-foreground/80 font-bold text-xs mb-1">
                       Yahoo! ショッピング / VC ID
                     </label>
                     <input
@@ -308,20 +308,20 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                       onChange={(e) =>
                         setLocalConfig({ ...localConfig, yahooAffiliateId: e.target.value })
                       }
-                      className="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 focus:bg-white focus:border-teal-500 focus:outline-none font-mono"
+                      className="w-full bg-secondary border border-border rounded-lg px-3 py-2 text-xs text-foreground focus:bg-card focus:border-primary focus:outline-none font-mono"
                     />
                   </div>
                 </div>
               </div>
 
               {/* PR Notice / Legal */}
-              <div className="bg-white border-2 border-slate-200 rounded-xl p-5 space-y-3">
+              <div className="bg-card border-2 border-border rounded-xl p-5 space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="font-bold text-slate-900 text-sm">
+                    <div className="font-bold text-foreground text-sm">
                       景品表示法・ステマ規制対応 PR表記
                     </div>
-                    <div className="text-xs text-slate-500">
+                    <div className="text-xs text-muted-foreground">
                       消費者庁ガイドラインに基づく「広告である旨」の告知表示
                     </div>
                   </div>
@@ -334,7 +334,7 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                       }
                       className="sr-only peer"
                     />
-                    <div className="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-teal-600"></div>
+                    <div className="w-9 h-5 bg-border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-card after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-card after:border-border after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
                   </label>
                 </div>
 
@@ -344,7 +344,7 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                   onChange={(e) =>
                     setLocalConfig({ ...localConfig, prNoticeText: e.target.value })
                   }
-                  className="w-full bg-slate-50 border border-slate-300 rounded-lg p-2.5 text-xs text-slate-900 focus:bg-white focus:border-teal-500 focus:outline-none"
+                  className="w-full bg-secondary border border-border rounded-lg p-2.5 text-xs text-foreground focus:bg-card focus:border-primary focus:outline-none"
                 />
               </div>
             </div>
@@ -354,7 +354,7 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
           {activeTab === 'products' && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <p className="text-xs text-slate-600">
+                <p className="text-xs text-muted-foreground">
                   各ギアのカードに表示する推奨モデル名、参考価格、カスタムアフィリエイトURL（特定商品への直リンク）を設定できます。
                 </p>
               </div>
@@ -363,30 +363,30 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                 {localProducts.map((prod, idx) => (
                   <div
                     key={prod.gearId}
-                    className="bg-slate-50 border-2 border-slate-200 rounded-xl p-5 space-y-3 hover:border-slate-300 transition-colors"
+                    className="bg-secondary border-2 border-border rounded-xl p-5 space-y-3 hover:border-border transition-colors"
                   >
-                    <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <div className="flex items-center justify-between pb-2 border-b border-border">
                       <div>
-                        <span className="text-xs font-mono font-bold text-teal-800 uppercase px-2 py-0.5 bg-teal-100 rounded mr-2">
+                        <span className="text-xs font-mono font-bold text-primary uppercase px-2 py-0.5 bg-accent rounded mr-2">
                           {prod.category}
                         </span>
-                        <span className="font-bold text-slate-900 text-sm">{prod.title}</span>
+                        <span className="font-bold text-foreground text-sm">{prod.title}</span>
                       </div>
 
                       <label className="flex items-center gap-2 cursor-pointer text-xs">
-                        <span className="text-slate-500">ボタン表示:</span>
+                        <span className="text-muted-foreground">ボタン表示:</span>
                         <input
                           type="checkbox"
                           checked={prod.isEnabled}
                           onChange={(e) => handleProductChange(idx, 'isEnabled', e.target.checked)}
-                          className="rounded text-teal-600 focus:ring-teal-500"
+                          className="rounded text-primary focus:ring-teal-500"
                         />
                       </label>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                       <div>
-                        <label className="block text-slate-700 font-semibold mb-1">
+                        <label className="block text-foreground/80 font-semibold mb-1">
                           推奨代表モデル・ブランド名
                         </label>
                         <input
@@ -395,12 +395,12 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                           onChange={(e) =>
                             handleProductChange(idx, 'recommendedBrandModel', e.target.value)
                           }
-                          className="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs text-slate-900 focus:border-teal-500 focus:outline-none"
+                          className="w-full bg-card border border-border rounded-lg px-3 py-1.5 text-xs text-foreground focus:border-primary focus:outline-none"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-slate-700 font-semibold mb-1">
+                        <label className="block text-foreground/80 font-semibold mb-1">
                           検索キーワード（自動検索リンク用）
                         </label>
                         <input
@@ -409,7 +409,7 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                           onChange={(e) =>
                             handleProductChange(idx, 'searchKeyword', e.target.value)
                           }
-                          className="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-xs text-slate-900 focus:border-teal-500 focus:outline-none"
+                          className="w-full bg-card border border-border rounded-lg px-3 py-1.5 text-xs text-foreground focus:border-primary focus:outline-none"
                         />
                       </div>
                     </div>
@@ -417,7 +417,7 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                     {/* Direct Custom Affiliate URLs */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs pt-1">
                       <div>
-                        <label className="block text-slate-600 mb-0.5">
+                        <label className="block text-muted-foreground mb-0.5">
                           Amazon 直リンクURL（空欄なら自動検索）
                         </label>
                         <input
@@ -427,12 +427,12 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                           onChange={(e) =>
                             handleProductChange(idx, 'customAmazonUrl', e.target.value)
                           }
-                          className="w-full bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-[11px] text-slate-900 focus:border-teal-500 focus:outline-none font-mono"
+                          className="w-full bg-card border border-border rounded-lg px-2.5 py-1.5 text-[11px] text-foreground focus:border-primary focus:outline-none font-mono"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-slate-600 mb-0.5">
+                        <label className="block text-muted-foreground mb-0.5">
                           楽天 直リンクURL（空欄なら自動検索）
                         </label>
                         <input
@@ -442,12 +442,12 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                           onChange={(e) =>
                             handleProductChange(idx, 'customRakutenUrl', e.target.value)
                           }
-                          className="w-full bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-[11px] text-slate-900 focus:border-teal-500 focus:outline-none font-mono"
+                          className="w-full bg-card border border-border rounded-lg px-2.5 py-1.5 text-[11px] text-foreground focus:border-primary focus:outline-none font-mono"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-slate-600 mb-0.5">
+                        <label className="block text-muted-foreground mb-0.5">
                           Yahoo! 直リンクURL（空欄なら自動検索）
                         </label>
                         <input
@@ -457,7 +457,7 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
                           onChange={(e) =>
                             handleProductChange(idx, 'customYahooUrl', e.target.value)
                           }
-                          className="w-full bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-[11px] text-slate-900 focus:border-teal-500 focus:outline-none font-mono"
+                          className="w-full bg-card border border-border rounded-lg px-2.5 py-1.5 text-[11px] text-foreground focus:border-primary focus:outline-none font-mono"
                         />
                       </div>
                     </div>
@@ -469,7 +469,7 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
         </div>
 
         {/* Footer with Save Action */}
-        <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+        <div className="px-6 py-4 bg-secondary border-t border-border flex items-center justify-between">
           <div className="flex items-center gap-2">
             {isSavedToast && (
               <span className="flex items-center gap-1.5 text-xs text-emerald-700 font-bold bg-emerald-100 px-3 py-1 rounded-md">
@@ -482,13 +482,13 @@ export const AdminAffiliateModal: React.FC<AdminAffiliateModalProps> = ({
           <div className="flex items-center gap-3">
             <button
               onClick={onClose}
-              className="px-4 py-2 text-xs font-bold text-slate-700 bg-white hover:bg-slate-100 rounded-lg border border-slate-300 transition-colors"
+              className="px-4 py-2 text-xs font-bold text-foreground/80 bg-card hover:bg-muted rounded-lg border border-border transition-colors"
             >
               閉じる
             </button>
             <button
               onClick={handleSave}
-              className="px-6 py-2 text-xs font-bold text-white bg-teal-600 hover:bg-teal-500 active:bg-teal-700 rounded-lg transition-colors flex items-center gap-2 shadow-sm"
+              className="px-6 py-2 text-xs font-bold text-primary-foreground bg-primary hover:bg-primary active:bg-primary rounded-lg transition-colors flex items-center gap-2 shadow-sm"
             >
               <Save className="w-4 h-4" />
               <span>設定を保存する</span>
