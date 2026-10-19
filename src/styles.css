@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Shippori Mincho", "Noto Serif JP", serif;
+  --font-display: "Noto Serif JP", "Hiragino Mincho ProN", serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -167,7 +167,7 @@
 }
 
 @utility field-guide-header {
-  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
   letter-spacing: 0.02em;
 }
 
@@ -263,4 +263,62 @@
   /* Amber caution -> warm field-guide ochre (kept, slightly warmed) */
   .shadow-amber-500\/20 { --tw-shadow-color: oklch(0.65 0.12 75 / 0.2); }
   .from-amber-50\/90 { --tw-gradient-from: oklch(0.96 0.03 90 / 0.9); }
+}
+
+/*
+ * Readability pass: body copy uses the loaded Japanese gothic, the smallest
+ * type sizes are lifted a step, and line-height / tracking are opened up so
+ * Japanese text reads cleanly on the cream paper background.
+ */
+@theme {
+  --font-sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.7;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.75;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.85;
+
+  /* Mincho headings read better with a touch of air than with negative tracking */
+  --tracking-tight: 0.01em;
+}
+
+@layer base {
+  body {
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+    font-feature-settings: "palt";
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Tiny one-off sizes used in dense cards -> readable floor of 12-13px */
+@layer utilities {
+  .text-\[9px\],
+  .text-\[10px\] {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .text-\[11px\],
+  .text-\[12px\] {
+    font-size: 0.8125rem;
+    line-height: 1.7;
+  }
+}
+
+/* Small grey copy needs more contrast on cream */
+:root {
+  --muted-foreground: oklch(0.45 0.035 148);
+}
+
+.dark {
+  --muted-foreground: oklch(0.75 0.03 140);
 }
