@@ -13,9 +13,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onExploreMap, onExploreS
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className="relative border-b border-border bg-gradient-to-b from-sky-50/60 via-teal-50/20 to-white overflow-hidden">
-      {/* Background subtle light pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(20,184,166,0.12),rgba(255,255,255,0))]" />
+    <div className="relative border-b border-border bg-background overflow-hidden">
+      {/* Contour line motif — topographic map feel */}
+      <div className="absolute inset-0 contour-lines opacity-70 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,oklch(0.5_0.06_155/0.08),transparent)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-16 lg:pb-20 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
