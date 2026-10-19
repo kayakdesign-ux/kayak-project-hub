@@ -94,7 +94,7 @@ export const SafetySection: React.FC = () => {
                 <span aria-hidden="true">·</span>
                 <span>WhiteWater Safety & Rescue Master Manual</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-foreground tracking-tight">
                 安全講習 ＆ レスキューマニュアル
               </h2>
               <p className="text-foreground/80 text-base mt-2 max-w-3xl leading-relaxed">

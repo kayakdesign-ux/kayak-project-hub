@@ -31,7 +31,7 @@ export const RiverFlowTipsSection: React.FC = () => {
             <Compass className="w-3.5 h-3.5 text-teal-400" />
             <span>Section 02 · 水流判別 ＆ リバーリーディング</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary-foreground tracking-tight mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display text-primary-foreground tracking-tight mb-4 leading-tight">
             川の読み方 ＆ リバーフローTips
           </h2>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">

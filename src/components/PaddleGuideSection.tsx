@@ -130,7 +130,7 @@ export const PaddleGuideSection: React.FC<PaddleGuideSectionProps> = ({
               <span aria-hidden="true">·</span>
               <span>Paddle Selection & Ergonomics</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-foreground tracking-tight">
               パドルの選び方徹底ガイド
             </h2>
             <p className="text-foreground/80 text-base mt-2 max-w-2xl leading-relaxed">

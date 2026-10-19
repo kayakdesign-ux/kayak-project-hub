@@ -584,7 +584,7 @@ export const PaddlerTipsSection: React.FC = () => {
               <span aria-hidden="true">·</span>
               <span>Essential River Tips</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-foreground tracking-tight">
               カヤッカーなら知っててTips 16選
             </h2>
             <p className="text-foreground/80 text-base mt-2 max-w-3xl leading-relaxed">
@@ -653,7 +653,7 @@ export const PaddlerTipsSection: React.FC = () => {
               <span aria-hidden="true">·</span>
               <span>Core River Essence & Body Dynamics</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-foreground tracking-tight">
               カヤッカーなら知っててEssence
             </h2>
             <p className="text-foreground/80 text-base mt-2 max-w-3xl leading-relaxed">

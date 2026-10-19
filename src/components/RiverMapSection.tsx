@@ -37,7 +37,8 @@ export const RiverMapSection: React.FC<RiverMapSectionProps> = ({
     CLASS_DEFINITIONS.find((c) => c.classLevel === activeClassTab) || CLASS_DEFINITIONS[2];
 
   return (
-    <section id="river-map" className="py-20 lg:py-28 bg-muted border-b border-border">
+    <section id="river-map" className="py-20 lg:py-28 bg-muted border-b border-border relative overflow-hidden">
+      <div className="absolute inset-0 contour-lines-subtle pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 border-b border-border pb-8">

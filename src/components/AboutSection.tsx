@@ -32,7 +32,7 @@ export const AboutSection: React.FC = () => {
             <span aria-hidden="true">·</span>
             <span>Concept & Navigators</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-foreground tracking-tight">
             New to Kayaker.jp について
           </h2>
           <p className="text-foreground/80 text-base mt-2 max-w-3xl leading-relaxed">

@@ -56,7 +56,7 @@ export const GearGuideSection: React.FC<GearGuideProps> = ({
               <span aria-hidden="true">·</span>
               <span>Equipment Guide & Selection</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-foreground tracking-tight">
               初心者向けボート・ギア選びの指針
             </h2>
             <p className="text-foreground/80 text-base mt-2 max-w-2xl leading-relaxed">
