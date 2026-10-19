@@ -196,7 +196,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-teal-500 selection:text-white">
+    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans selection:bg-primary selection:text-primary-foreground">
       {/* 3-Zone Header with Admin Button & New to Kayaker.jp wordmark */}
       <Header
         onOpenQuiz={() => setIsQuizOpen(true)}
