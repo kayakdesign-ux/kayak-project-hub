@@ -170,3 +170,97 @@
   font-family: "Shippori Mincho", "Noto Serif JP", serif;
   letter-spacing: 0.02em;
 }
+
+/*
+ * Field-guide palette remap for legacy utility classes.
+ * Dark slate sections become deep forest-ink panels; teal accents become
+ * the deep green primary; amber stays as the field-guide caution color.
+ */
+@layer utilities {
+  /* Dark panels -> deep forest ink */
+  .bg-slate-900, .bg-slate-950 { background-color: oklch(0.3 0.045 155); }
+  .bg-slate-900\/60 { background-color: oklch(0.3 0.045 155 / 0.6); }
+  .bg-slate-900\/70 { background-color: oklch(0.3 0.045 155 / 0.7); }
+  .bg-slate-900\/80, .bg-slate-950\/80 { background-color: oklch(0.3 0.045 155 / 0.8); }
+  .bg-slate-900\/90 { background-color: oklch(0.3 0.045 155 / 0.9); }
+  .bg-slate-800 { background-color: oklch(0.35 0.04 155); }
+  .bg-slate-800\/80 { background-color: oklch(0.35 0.04 155 / 0.8); }
+  .bg-slate-800\/90 { background-color: oklch(0.35 0.04 155 / 0.9); }
+  .bg-slate-850\/80 { background-color: oklch(0.33 0.04 155 / 0.8); }
+  .bg-slate-150 { background-color: oklch(0.93 0.02 95); }
+  .from-slate-950 { --tw-gradient-from: oklch(0.3 0.045 155); }
+  .from-slate-950\/80 { --tw-gradient-from: oklch(0.3 0.045 155 / 0.8); }
+  .via-slate-950\/30 { --tw-gradient-via: oklch(0.3 0.045 155 / 0.3); }
+  .via-slate-900, .via-slate-800 { --tw-gradient-via: oklch(0.32 0.045 155); }
+  .to-slate-950, .to-slate-950\/80 { --tw-gradient-to: oklch(0.28 0.045 155); }
+
+  /* Light text on dark panels -> paper */
+  .text-slate-100, .text-slate-200, .text-slate-300 { color: oklch(0.93 0.015 95); }
+  .text-slate-950 { color: oklch(0.25 0.03 150); }
+  .placeholder-slate-400::placeholder { color: oklch(0.55 0.02 120); }
+  .border-slate-800, .border-slate-800\/80 { border-color: oklch(0.4 0.04 155); }
+  .border-slate-700, .border-slate-700\/70, .border-slate-700\/80 { border-color: oklch(0.45 0.04 155); }
+  .hover\:border-slate-600:hover, .hover\:border-slate-400:hover { border-color: oklch(0.5 0.05 155); }
+  .hover\:bg-slate-800:hover { background-color: oklch(0.35 0.04 155); }
+  .divide-slate-100 > * + *, .divide-slate-200 > * + * { border-color: var(--color-border); }
+
+  /* Teal accents -> deep green family */
+  .text-teal-300, .text-teal-400 { color: oklch(0.8 0.09 155); }
+  .text-teal-400\/40 { color: oklch(0.8 0.09 155 / 0.4); }
+  .text-teal-500 { color: oklch(0.55 0.08 155); }
+  .text-teal-100, .text-teal-200 { color: oklch(0.9 0.05 150); }
+  .text-teal-200\/90 { color: oklch(0.9 0.05 150 / 0.9); }
+  .text-teal-950 { color: oklch(0.28 0.05 155); }
+  .hover\:text-teal-400:hover { color: oklch(0.8 0.09 155); }
+  .hover\:text-teal-950:hover { color: oklch(0.28 0.05 155); }
+  .bg-teal-200 { background-color: oklch(0.9 0.05 150); }
+  .bg-teal-400 { background-color: oklch(0.75 0.1 155); }
+  .bg-teal-900 { background-color: oklch(0.32 0.05 155); }
+  .bg-teal-900\/80 { background-color: oklch(0.32 0.05 155 / 0.8); }
+  .bg-teal-900\/5 { background-color: oklch(0.32 0.05 155 / 0.05); }
+  .bg-teal-950 { background-color: oklch(0.27 0.045 155); }
+  .bg-teal-950\/40 { background-color: oklch(0.27 0.045 155 / 0.4); }
+  .bg-teal-950\/80 { background-color: oklch(0.27 0.045 155 / 0.8); }
+  .hover\:bg-teal-400:hover { background-color: oklch(0.75 0.1 155); }
+  .border-teal-100, .border-teal-200, .border-teal-200\/50, .border-teal-200\/60 { border-color: oklch(0.85 0.04 150); }
+  .border-teal-300, .border-teal-400, .border-teal-400\/40 { border-color: oklch(0.7 0.08 155); }
+  .border-teal-700, .border-teal-700\/60, .border-teal-800, .border-teal-800\/60, .border-teal-800\/80 { border-color: oklch(0.42 0.06 155); }
+  .hover\:border-teal-400:hover { border-color: oklch(0.7 0.08 155); }
+  .ring-teal-100, .ring-teal-200 { --tw-ring-color: oklch(0.85 0.04 150); }
+  .ring-teal-400\/50 { --tw-ring-color: oklch(0.7 0.08 155 / 0.5); }
+  .ring-teal-500 { --tw-ring-color: oklch(0.55 0.08 155); }
+  .shadow-teal-700\/20 { --tw-shadow-color: oklch(0.38 0.07 155 / 0.2); }
+  .shadow-teal-500\/20, .shadow-teal-500\/25 { --tw-shadow-color: oklch(0.5 0.08 155 / 0.2); }
+  .from-teal-900\/30 { --tw-gradient-from: oklch(0.32 0.05 155 / 0.3); }
+  .from-teal-950\/40 { --tw-gradient-from: oklch(0.27 0.045 155 / 0.4); }
+  .from-teal-950\/80 { --tw-gradient-from: oklch(0.27 0.045 155 / 0.8); }
+  .to-teal-950\/80 { --tw-gradient-to: oklch(0.27 0.045 155 / 0.8); }
+  .to-teal-50\/70 { --tw-gradient-to: oklch(0.96 0.015 95 / 0.7); }
+
+  /* Emerald success -> deep green */
+  .text-emerald-200, .text-emerald-300, .text-emerald-400 { color: oklch(0.8 0.09 155); }
+  .text-emerald-600, .text-emerald-700 { color: oklch(0.45 0.08 155); }
+  .text-emerald-800, .text-emerald-900, .text-emerald-950 { color: oklch(0.3 0.06 155); }
+  .bg-emerald-50, .bg-emerald-50\/30, .bg-emerald-50\/70 { background-color: oklch(0.94 0.03 145); }
+  .bg-emerald-100 { background-color: oklch(0.92 0.04 150); }
+  .bg-emerald-400, .bg-emerald-500 { background-color: oklch(0.6 0.1 155); }
+  .bg-emerald-900\/90 { background-color: oklch(0.32 0.05 155 / 0.9); }
+  .bg-emerald-950, .bg-emerald-950\/40, .bg-emerald-950\/80 { background-color: oklch(0.27 0.045 155); }
+  .border-emerald-200, .border-emerald-300 { border-color: oklch(0.85 0.05 150); }
+  .border-emerald-500\/40, .border-emerald-500\/50, .border-emerald-500\/60, .border-emerald-500\/70 { border-color: oklch(0.6 0.1 155 / 0.5); }
+  .border-emerald-600\/70, .border-emerald-800\/60 { border-color: oklch(0.45 0.08 155); }
+
+  /* Sky/cyan water accents -> muted river blue-green */
+  .text-sky-300, .text-sky-500, .text-sky-600, .text-sky-700, .text-sky-800, .text-sky-900 { color: oklch(0.5 0.06 200); }
+  .text-cyan-600 { color: oklch(0.5 0.07 190); }
+  .bg-sky-50\/60 { background-color: oklch(0.95 0.02 200 / 0.6); }
+  .bg-sky-100 { background-color: oklch(0.93 0.03 200); }
+  .bg-sky-600, .bg-sky-700 { background-color: oklch(0.5 0.07 200); }
+  .bg-cyan-500\/10 { background-color: oklch(0.55 0.08 190 / 0.1); }
+  .hover\:bg-sky-500:hover { background-color: oklch(0.55 0.08 200); }
+  .border-sky-200, .border-sky-300 { border-color: oklch(0.85 0.04 200); }
+
+  /* Amber caution -> warm field-guide ochre (kept, slightly warmed) */
+  .shadow-amber-500\/20 { --tw-shadow-color: oklch(0.65 0.12 75 / 0.2); }
+  .from-amber-50\/90 { --tw-gradient-from: oklch(0.96 0.03 90 / 0.9); }
+}
