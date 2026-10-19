@@ -29,9 +29,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onExploreMap, onExploreS
               <span>Japan & Global Rivers</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.15] text-balance mb-6 font-display">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-[1.2] text-balance mb-6 font-display">
               激流を切り拓く、<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-cyan-600 to-sky-600">
+              <span className="text-primary border-b-4 border-primary/30 pb-1">
                 確かな知恵と装備。
               </span>
             </h1>
@@ -104,12 +104,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onExploreMap, onExploreS
               )}
 
               {/* Gradient scrim overlay for editorial text contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
 
               <div className="absolute bottom-4 left-4 right-4 pointer-events-none text-primary-foreground">
-                <p className="text-xs font-semibold text-teal-300">ACTION SPOTLIGHT</p>
+                <p className="text-xs font-semibold text-chart-4 font-mono tracking-widest">ACTION SPOTLIGHT</p>
                 <p className="text-sm font-medium">激流（ホワイトウォーター）の波とホールを突破する</p>
-                <div className="flex items-center gap-2 text-xs text-slate-200 mt-0.5">
+                <div className="flex items-center gap-2 text-xs text-primary-foreground/80 mt-0.5">
                   <span>Class IV Rapid Run</span>
                   <span aria-hidden="true">·</span>
                   <span>High Water Season</span>
@@ -134,7 +134,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenQuiz, onExploreMap, onExploreS
             <div className="text-xs text-muted-foreground font-medium">ストレーナー/シーブ等安全講習</div>
           </div>
           <div className="space-y-1">
-            <div className="text-2xl font-bold text-emerald-600 font-mono tabular-nums">30+ 専門用語</div>
+            <div className="text-2xl font-bold text-primary font-mono tabular-nums">30+ 専門用語</div>
             <div className="text-xs text-muted-foreground font-medium">自由追加＆ブックマーク機能</div>
           </div>
         </div>
